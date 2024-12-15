@@ -1,0 +1,30 @@
+@import '@/styles/mixins';
+@import '@/styles/variables';
+
+.copyright {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+
+  @include tablet {
+    flex-direction: row;
+    gap: 8px;
+  }
+
+  @include desktop-lg {
+    align-items: center;
+    gap: 16px;
+  }
+}
+
+.copyright > span {
+  color: var(--white, #ffffff);
+  font-family: 'Gotham Pro';
+  font-size: 16px;
+  line-height: 1;
+  text-transform: uppercase;
+
+  @include tablet {
+    font-size: 18px;
+  }
+}

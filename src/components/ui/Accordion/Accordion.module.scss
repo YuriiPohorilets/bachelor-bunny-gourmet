@@ -1,0 +1,24 @@
+.item {
+}
+
+.header {
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  color: var(--white, #ffffff);
+  font-family: 'Cormorant Unicase';
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.body {
+}
+
+.content {
+  color: var(--white, #ffffff);
+  line-height: 1.2;
+}

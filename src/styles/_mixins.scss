@@ -1,0 +1,53 @@
+@mixin tablet {
+  @media (min-width: #{$screen-tablet}) {
+    @content;
+  }
+}
+
+@mixin desktop-lg {
+  @media (min-width: #{$screen-desktop-lg}) {
+    @content;
+  }
+}
+
+@mixin desktop-xl {
+  @media (min-width: #{$screen-desktop-xl}) {
+    @content;
+  }
+}
+
+@mixin desktop-xxl {
+  @media (min-width: #{$screen-desktop-xxl}) {
+    @content;
+  }
+}
+
+@mixin flex-center($gap: 0) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @if $gap != 0 {
+    gap: $gap;
+  }
+}
+
+@mixin square($size, $radius: 0) {
+  width: $size;
+  height: $size;
+
+  @if $radius != 0 {
+    border-radius: $radius;
+  }
+}
+
+@function clamp-calc($min-width, $max-width, $size-at-min-width, $size-at-max-width) {
+  $slope: ($size-at-max-width - $size-at-min-width) / ($max-width - $min-width);
+  $y-axis-intersection: -1 * $min-width * $slope + $size-at-min-width;
+  $return-value: clamp(
+    #{$size-at-min-width},
+    #{$y-axis-intersection} + #{$slope} * 100vw,
+    #{$size-at-max-width}
+  );
+  @return $return-value;
+}

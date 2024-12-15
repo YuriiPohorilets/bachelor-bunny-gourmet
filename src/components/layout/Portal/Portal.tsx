@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 
-type PortalProps = React.PropsWithChildren & {
+type PropsType = React.PropsWithChildren & {
   containerId?: string;
 };
 
-export const Portal: React.FC<PortalProps> = ({ children, containerId = 'root-modal' }) => {
+export const Portal: React.FC<PropsType> = ({ children, containerId = 'root-modal' }) => {
   const [container, setContainer] = useState<HTMLElement | null>(null);
 
   useEffect(() => {

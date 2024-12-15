@@ -1,0 +1,17 @@
+@import '@/styles/mixins';
+@import '@/styles/variables';
+
+.footer {
+}
+
+.container {
+  padding-inline: 27px;
+
+  @include tablet {
+    padding-inline: 32px;
+  }
+
+  @include desktop-lg {
+    padding-inline: 48px;
+  }
+}
