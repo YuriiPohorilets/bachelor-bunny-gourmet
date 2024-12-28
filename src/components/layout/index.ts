@@ -1,4 +1,5 @@
 export { Portal } from './Portal/Portal';
+export { ClickAwayListener } from './ClickAwayListener/ClickAwayListener';
 
 export { RootLayout } from './RootLayout/RootLayout';
 export { Header } from './Header/Header';

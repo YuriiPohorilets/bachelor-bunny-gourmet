@@ -1,8 +1,8 @@
-type PropsType = {
+type IconProps = {
   color?: string;
 };
 
-export const Envelope: React.FC<PropsType> = ({ color = 'currentColor' }) => {
+export const Envelope: React.FC<IconProps> = ({ color = 'currentColor' }) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
       <path

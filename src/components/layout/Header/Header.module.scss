@@ -1,8 +1,37 @@
+@import '@/styles/mixins';
+@import '@/styles/variables';
+
 .header {
   position: fixed;
   top: 0;
   left: 0;
   z-index: 800;
 
+  padding-block: 20px;
+
   width: 100%;
+
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0) 6%, #000 100%);
+
+  @include desktop-lg {
+    top: 53px;
+    padding-block: 8px;
+
+    background: transparent;
+  }
+}
+
+.container {
+  padding-inline: 20px;
+
+  @include desktop-lg {
+    padding-inline: 48px;
+  }
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
 }

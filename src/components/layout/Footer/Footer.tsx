@@ -8,7 +8,9 @@ export const Footer: React.FC<PropsType> = ({ children }) => {
   return (
     <footer className={styles.footer} id="footer">
       <Container className={styles.container}>
-        <Copyright />
+        <div className={styles.wrapper}>
+          <Copyright />
+        </div>
       </Container>
     </footer>
   );

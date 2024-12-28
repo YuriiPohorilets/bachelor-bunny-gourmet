@@ -41,6 +41,28 @@
   }
 }
 
+@mixin button {
+  cursor: pointer;
+
+  transition: color $duration-sm $easing-common, background-color $duration-sm $easing-common;
+
+  &:is(:disabled) {
+    cursor: not-allowed;
+  }
+}
+
+@mixin hover-focus {
+  &:is(:hover, :focus-visible) {
+    @content;
+  }
+}
+
+@mixin disabled {
+  &:is(:disabled) {
+    @content;
+  }
+}
+
 @function clamp-calc($min-width, $max-width, $size-at-min-width, $size-at-max-width) {
   $slope: ($size-at-max-width - $size-at-min-width) / ($max-width - $min-width);
   $y-axis-intersection: -1 * $min-width * $slope + $size-at-min-width;

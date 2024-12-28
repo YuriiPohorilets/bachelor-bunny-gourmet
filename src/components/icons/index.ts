@@ -1,4 +1,5 @@
 export { CrownIcon } from './CrownIcon/CrownIcon';
+export { BasicArrow } from './BasicArrow/BasicArrow';
 
 export { PhoneIcon } from './PhoneIcon/PhoneIcon';
 export { Envelope } from './Envelope/Envelope';

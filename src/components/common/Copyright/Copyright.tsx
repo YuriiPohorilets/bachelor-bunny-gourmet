@@ -1,6 +1,6 @@
 import styles from './Copyright.module.scss';
 
-export const Copyright = () => {
+export const Copyright: React.FC = () => {
   const date = new Date().getFullYear();
 
   return (

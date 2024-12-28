@@ -1,32 +1,52 @@
 import { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
-import clsx from 'clsx';
+import { MotionConfig } from 'motion/react';
 
-import { IconWrapper } from '@/components/layout';
+import { AccordionItem } from './components';
+import { duration, easing } from '@/utils/framer-animation';
 import styles from './Accordion.module.scss';
 
-type PropsType = {
+type AccordionItemType = {
   title: string;
   content: string;
-  expanded?: boolean;
 };
 
-export const Accordion: React.FC<PropsType> = ({ title, content, expanded = false }) => {
-  const [isExpanded, setIsExpanded] = useState(expanded);
+type AccordionProps = {
+  items: AccordionItemType[];
+  defaultOpenItems?: number[];
+  allowMultiple?: boolean;
+};
 
-  const handleExpandToggle = () => setIsExpanded(prevState => !prevState);
+export const Accordion: React.FC<AccordionProps> = ({
+  items,
+  allowMultiple = false,
+  defaultOpenItems = [],
+}) => {
+  const [openIndexes, setOpenIndexes] = useState<number[]>(defaultOpenItems);
+
+  const toggleItem = (index: number) => {
+    if (allowMultiple) {
+      setOpenIndexes(prevState =>
+        prevState.includes(index) ? prevState.filter(i => i !== index) : [...prevState, index]
+      );
+    } else {
+      setOpenIndexes(prevState => (prevState.includes(index) ? [] : [index]));
+    }
+  };
 
   return (
-    <div aria-expanded={isExpanded} className={styles.item}>
-      <div onClick={handleExpandToggle} className={styles.header}>
-        <span className={styles.title}>{title}</span>
-
-        <IconWrapper>+</IconWrapper>
-      </div>
-
-      <div className={styles.body}>
-        <p className={styles.content}>{content}</p>
-      </div>
-    </div>
+    <MotionConfig transition={{ duration: duration.sm, ease: easing.common }}>
+      <ul className={styles.list}>
+        {items.map((item, index) => (
+          <AccordionItem
+            key={index}
+            title={item.title}
+            onClick={() => toggleItem(index)}
+            isOpen={openIndexes.includes(index)}
+          >
+            {item.content}
+          </AccordionItem>
+        ))}
+      </ul>
+    </MotionConfig>
   );
 };

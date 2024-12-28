@@ -1,14 +1,16 @@
-import { Accordion } from '@/components/ui';
 import Head from 'next/head';
+import { useState } from 'react';
+
+import { Section } from '@/components/layout';
+import { Faq } from '@/components/common';
+import { faq } from '@/constants/faq';
 
 const HomePage = () => {
   return (
     <div style={{ paddingTop: 120 }}>
-      <h1>Hello!</h1>
-      <Accordion title="one" content="Hello world" />
-      <Accordion title="two" content="Hello world" />
-      <Accordion title="three" content="Hello world" />
-      <Accordion title="four" content="Hello world" />
+      <Section id="FAQ">
+        <Faq items={faq} />
+      </Section>
     </div>
   );
 };

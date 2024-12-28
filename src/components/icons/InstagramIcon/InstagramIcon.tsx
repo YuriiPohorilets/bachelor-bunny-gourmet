@@ -1,8 +1,8 @@
-type TypeProps = {
+type IconProps = {
   color?: string;
 };
 
-export const InstagramIcon: React.FC<TypeProps> = ({ color = 'currentColor' }) => {
+export const InstagramIcon: React.FC<IconProps> = ({ color = 'currentColor' }) => {
   return (
     <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path

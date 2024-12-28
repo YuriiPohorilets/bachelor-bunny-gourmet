@@ -1,6 +1,6 @@
 export enum PagePath {
   Home = '/',
-  AboutUs = '/about-uu',
+  AboutUs = '/about-us',
   GrabAndGo = '/grab-and-go',
   Delivery = '/delivery',
   Catering = '/catering-and-events',
@@ -13,6 +13,7 @@ export enum MediaQuery {
 }
 
 export type NavType = {
+  id: string;
   label: string;
   link?: PagePath;
   children?: NavType[];

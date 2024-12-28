@@ -1,12 +1,27 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 
-export const useModal = <ModalEl extends HTMLElement>({ isOpen = false }: { isOpen?: boolean }) => {
+type UseModalProps = {
+  isOpen?: boolean;
+};
+
+type UseModalState<ModalEl extends HTMLElement> = {
+  modalRef: React.RefObject<ModalEl>;
+  open: boolean;
+  handleOpen: () => void;
+  handleClose: () => void;
+  handleToggle: () => void;
+};
+
+export const useModal = <ModalEl extends HTMLElement>({
+  isOpen = false,
+}: UseModalProps): UseModalState<ModalEl> => {
   const modalRef = useRef<ModalEl | null>(null);
 
   const [open, setOpen] = useState(isOpen);
 
   const handleOpen = useCallback(() => setOpen(true), []);
   const handleClose = useCallback(() => setOpen(false), []);
+  const handleToggle = useCallback(() => setOpen(prevState => !prevState), []);
 
   const handleEscapeKey = useCallback((e: KeyboardEvent) => {
     if (e.key === 'Escape') {
@@ -37,5 +52,6 @@ export const useModal = <ModalEl extends HTMLElement>({ isOpen = false }: { isOp
     open,
     handleOpen,
     handleClose,
+    handleToggle,
   };
 };

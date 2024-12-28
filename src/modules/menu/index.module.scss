@@ -1,0 +1,131 @@
+@import '@/styles/mixins';
+@import '@/styles/variables';
+
+.wrapper {
+  position: relative;
+}
+
+.buttonWrapper {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.button {
+  @include button;
+  @include flex-center;
+  @include square(24px);
+
+  position: relative;
+  z-index: 850;
+  padding: 0;
+
+  color: var(--white, #ffffff);
+
+  border: none;
+  background-color: transparent;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+
+    width: 1px;
+    height: 100%;
+
+    background-color: currentColor;
+
+    transition: rotate $duration-sm $easing-common;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+
+    width: 100%;
+    height: 1px;
+
+    background-color: currentColor;
+
+    transition: rotate $duration-sm $easing-common;
+  }
+}
+
+.button.open::after {
+  rotate: 45deg;
+}
+
+.button.open::before {
+  rotate: 45deg;
+}
+
+.button.open > .buttonIcon {
+  rotate: 45deg;
+}
+
+.buttonIcon {
+  @include square(8px);
+  position: relative;
+  z-index: 2;
+
+  background-color: var(--dark-bg, #1a1a1a);
+  transition: rotate $duration-sm $easing-common;
+}
+
+.menuLabel {
+  color: var(--white, #ffffff);
+  font-family: $font-cormorant-unicase;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 800;
+
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  height: 100lvh;
+
+  background-color: var(--dark-bg, #1a1a1a);
+
+  overflow: hidden;
+
+  @include tablet {
+    width: 50%;
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+
+  padding-block: 20px;
+  padding-inline: 20px;
+  height: 74px;
+}
+
+.body {
+  flex-grow: 1;
+
+  padding-block: 64px;
+  padding-inline: 20px;
+
+  overflow-y: auto;
+}
+
+.footer {
+  padding-bottom: 32px;
+  padding-inline: 20px;
+}

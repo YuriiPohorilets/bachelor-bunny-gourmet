@@ -1,8 +1,8 @@
-type TypeProps = {
+type IconProps = {
   color?: string;
 };
 
-export const YoutubeIcon: React.FC<TypeProps> = ({ color = 'currentColor' }) => {
+export const YoutubeIcon: React.FC<IconProps> = ({ color = 'currentColor' }) => {
   const id = Math.random() * 100_000;
 
   return (

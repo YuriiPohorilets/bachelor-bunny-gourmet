@@ -3,7 +3,6 @@
 
 .iconWrapper {
   @include flex-center;
-  @include square(100%);
 
   & > svg {
     @include square(100%);

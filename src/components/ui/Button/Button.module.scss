@@ -1,2 +1,40 @@
+@import '@/styles/mixins';
+@import '@/styles/variables';
+
 .button {
+  @include button;
+  @include flex-center;
+
+  padding-top: 16px;
+  padding-bottom: 15px;
+  padding-inline: 32px;
+  width: fit-content;
+
+  text-align: center;
+  font-family: $font-gotham-pro;
+  font-size: 20px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  border: none;
+}
+
+.button.fullWidth {
+  width: 100%;
+}
+
+.primary {
+  color: var(--dark-bg, #1a1a1a);
+
+  background-color: var(--white, #ffffff);
+}
+
+.accent {
+  color: var(--white, #fff);
+
+  background-color: var(--golden, #be8900);
+
+  @include disabled {
+    background-color: var(--main, #262626);
+  }
 }

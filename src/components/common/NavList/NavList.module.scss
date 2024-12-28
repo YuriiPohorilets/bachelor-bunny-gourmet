@@ -1,0 +1,17 @@
+@import '@/styles/mixins';
+@import '@/styles/variables';
+
+.nav {
+  width: min(100%, 854px);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+
+  @include desktop-lg {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
