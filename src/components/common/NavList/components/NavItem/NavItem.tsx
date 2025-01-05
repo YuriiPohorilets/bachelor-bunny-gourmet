@@ -6,7 +6,7 @@ import clsx from 'clsx';
 
 import { NavType } from '@/types';
 import { ClickAwayListener, IconWrapper } from '@/components/layout';
-import { BasicArrow } from '@/components/icons';
+import { BasicArrowIcon } from '@/components/icons';
 import styles from './NavItem.module.scss';
 
 type NavItemProps = {
@@ -43,7 +43,7 @@ export const NavItem: React.FC<NavItemProps> = ({ item }) => {
           <span>{item.label}</span>
 
           <IconWrapper className={clsx(styles.iconWrapper, isOpen && styles.open)}>
-            <BasicArrow />
+            <BasicArrowIcon />
           </IconWrapper>
         </span>
 

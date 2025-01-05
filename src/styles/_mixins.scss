@@ -32,6 +32,14 @@
   }
 }
 
+@mixin position-center($position: absolute, $zIndex: 0) {
+  position: $position;
+  top: 50%;
+  left: 50%;
+  z-index: $zIndex;
+  translate: -50% -50%;
+}
+
 @mixin square($size, $radius: 0) {
   width: $size;
   height: $size;
@@ -72,4 +80,9 @@
     #{$size-at-max-width}
   );
   @return $return-value;
+}
+
+@mixin responsive-font($min-width, $max-width, $min-size, $max-size) {
+  font-size: $min-size;
+  font-size: clamp-calc($min-width, $max-width, $min-size, $max-size);
 }

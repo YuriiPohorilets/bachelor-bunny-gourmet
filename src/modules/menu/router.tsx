@@ -29,12 +29,13 @@ export const MenuRouter: React.FC<IProps> = ({ interactor }) => {
         </div>
 
         <motion.div
+          data-lenis-prevent
           layout
           initial={{ opacity: 0, x: '100%' }}
           animate={{
             opacity: interactor.open ? 1 : 0,
             visibility: interactor.open ? 'visible' : 'hidden',
-            x: interactor.open ? 1 : '100%',
+            x: interactor.open ? 0 : '100%',
           }}
           className={clsx(styles.menu, interactor.open && styles.open)}
         >

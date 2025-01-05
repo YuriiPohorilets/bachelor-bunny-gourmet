@@ -8,7 +8,7 @@ type LogoProps = {
 
 export const Logo: React.FC<LogoProps> = ({ showLabel }) => {
   return (
-    <a href="/" className={styles.logo}>
+    <a href="/" aria-label="Logo" className={styles.logo}>
       <IconWrapper className={styles.iconWrapper}>
         <CrownIcon />
       </IconWrapper>

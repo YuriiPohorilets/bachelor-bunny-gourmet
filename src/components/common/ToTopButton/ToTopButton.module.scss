@@ -1,0 +1,24 @@
+@import '@/styles/mixins';
+@import '@/styles/variables';
+
+.button {
+  padding-block: 8px;
+  padding-inline: 8px;
+
+  color: var(--white, #fff);
+  font-family: $font-gotham-pro;
+  font-size: 18px;
+  line-height: 1;
+  text-transform: uppercase;
+
+  border: none;
+  background-color: transparent;
+
+  cursor: pointer;
+
+  transition: color $duration-sm $easing-common;
+
+  @include hover-focus {
+    color: var(--golden, #be8900);
+  }
+}

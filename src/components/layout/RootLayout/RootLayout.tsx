@@ -1,13 +1,15 @@
-import { Footer, Header } from '@/components/layout';
+import { Footer, Header, SmoothScroll } from '@/components/layout';
 
 type PropsType = React.PropsWithChildren & {};
 
 export const RootLayout: React.FC<PropsType> = ({ children }) => {
   return (
     <>
-      <Header />
-      <main>{children}</main>
-      <Footer />
+      <SmoothScroll>
+        <Header />
+        <main>{children}</main>
+        <Footer />
+      </SmoothScroll>
     </>
   );
 };

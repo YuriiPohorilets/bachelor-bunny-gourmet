@@ -80,9 +80,14 @@ body {
   color: var(--white, #ffffff);
   line-height: normal;
   font-weight: 400;
-  font-size: 18px;
+  font-size: 16px;
 
   background-color: var(--dark-bg, #1a1a1a);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url('../assets/images/bg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 main {
@@ -126,11 +131,6 @@ button,
 textarea,
 select {
   font: inherit;
-}
-
-html.lenis,
-html.lenis body {
-  height: auto;
 }
 
 @media (prefers-reduced-motion: reduce) {

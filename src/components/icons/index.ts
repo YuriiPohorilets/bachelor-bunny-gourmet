@@ -1,8 +1,9 @@
 export { CrownIcon } from './CrownIcon/CrownIcon';
-export { BasicArrow } from './BasicArrow/BasicArrow';
+export { BasicArrowIcon } from './BasicArrowIcon/BasicArrowIcon';
+export { OutwardArrowIcon } from './OutwardArrowIcon/OutwardArrowIcon';
 
 export { PhoneIcon } from './PhoneIcon/PhoneIcon';
-export { Envelope } from './Envelope/Envelope';
+export { EnvelopeIcon } from './EnvelopeIcon/EnvelopeIcon';
 
 export { FacebookIcon } from './FacebookIcon/FacebookIcon';
 export { InstagramIcon } from './InstagramIcon/InstagramIcon';

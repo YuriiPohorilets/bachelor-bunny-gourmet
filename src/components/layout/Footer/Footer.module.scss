@@ -2,6 +2,11 @@
 @import '@/styles/variables';
 
 .footer {
+  padding-block: 32px;
+
+  @include desktop-lg {
+    padding-block: 24px;
+  }
 }
 
 .container {
@@ -17,6 +22,16 @@
 }
 
 .wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 53px;
+
+  @include desktop-lg {
+    gap: 64px;
+  }
+}
+
+.copyWrapper {
   display: flex;
   align-items: center;
   gap: 32px;

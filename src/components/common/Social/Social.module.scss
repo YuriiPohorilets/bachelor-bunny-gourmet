@@ -1,0 +1,42 @@
+@import '@/styles/mixins';
+@import '@/styles/variables';
+
+.list {
+  display: flex;
+  gap: 8px;
+
+  @include desktop-lg {
+    gap: 12px;
+  }
+}
+
+.list.row {
+  flex-direction: row;
+}
+
+.list.column {
+  flex-direction: column;
+}
+
+.item {
+}
+
+.link {
+  color: var(--white, #fff);
+  font-family: $font-gotham-pro;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.icon {
+  @include square(32px);
+  color: var(--white, #fff);
+
+  opacity: 0.4;
+
+  transition: opacity $duration-sm $easing-common;
+
+  @include hover-focus {
+    opacity: 1;
+  }
+}

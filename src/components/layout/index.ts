@@ -2,6 +2,7 @@ export { Portal } from './Portal/Portal';
 export { ClickAwayListener } from './ClickAwayListener/ClickAwayListener';
 
 export { RootLayout } from './RootLayout/RootLayout';
+export { SmoothScroll } from './SmoothScroll/SmoothScroll';
 export { Header } from './Header/Header';
 export { Footer } from './Footer/Footer';
 

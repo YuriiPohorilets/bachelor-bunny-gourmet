@@ -1,0 +1,41 @@
+@import '@/styles/mixins';
+@import '@/styles/variables';
+
+.link {
+  display: flex;
+  gap: 32px;
+
+  padding-top: 8px;
+  padding-left: 24px;
+
+  width: fit-content;
+
+  color: var(--white, #fff);
+
+  border-bottom: 1px solid currentColor;
+
+  transition: color $duration-sm $easing-common;
+
+  @include desktop-lg {
+    padding-left: 0;
+  }
+
+  @include hover-focus {
+    color: var(--golden, #be8900);
+  }
+}
+
+.link.fullWidth {
+  width: 100%;
+}
+
+.label {
+  color: currentColor;
+  font-family: $font-cormorant-unicase;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.iconWrapper {
+  @include flex-center;
+}

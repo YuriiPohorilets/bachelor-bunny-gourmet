@@ -23,7 +23,7 @@ export const Portal: React.FC<PropsType> = ({ children, containerId = 'root-moda
     setContainer(portalContainer);
 
     return () => {
-      if (createdByPortal && portalContainer.parentNode === document.body) {
+      if (createdByPortal && portalContainer && portalContainer.parentNode === document.body) {
         document.body.removeChild(portalContainer);
       }
     };
