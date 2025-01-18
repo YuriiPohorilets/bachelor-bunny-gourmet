@@ -9,11 +9,11 @@ import { ClickAwayListener, IconWrapper } from '@/components/layout';
 import { BasicArrowIcon } from '@/components/icons';
 import styles from './NavItem.module.scss';
 
-type NavItemProps = {
+interface IProps {
   item: NavType;
-};
+}
 
-export const NavItem: React.FC<NavItemProps> = ({ item }) => {
+export const NavItem: React.FC<IProps> = ({ item }) => {
   const pathname = usePathname();
   const [openItem, setOpenItem] = useState<string>('');
 

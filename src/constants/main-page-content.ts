@@ -10,4 +10,12 @@ export const content = {
       'Customer\n trust',
     ],
   },
+
+  about: {
+    title: 'Indulge in gourmet elegance, tailored for the modern gentleman',
+    description: [
+      'Bachelor  Bunny Gourmet is a meal delivery and catering service for busy professionals.',
+      'We offer the convenience and luxury of homestyle meals delivered right to your door. Our weekly dinner delivery is tailored to each client and executed on time by our courteous representatives.',
+    ],
+  },
 };

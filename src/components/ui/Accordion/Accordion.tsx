@@ -10,13 +10,13 @@ type AccordionItemType = {
   content: string;
 };
 
-type AccordionProps = {
+interface IProps {
   items: AccordionItemType[];
   defaultOpenItems?: number[];
   allowMultiple?: boolean;
-};
+}
 
-export const Accordion: React.FC<AccordionProps> = ({
+export const Accordion: React.FC<IProps> = ({
   items,
   allowMultiple = false,
   defaultOpenItems = [],

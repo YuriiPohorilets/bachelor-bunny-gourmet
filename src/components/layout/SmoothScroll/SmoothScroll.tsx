@@ -2,9 +2,9 @@ import React, { useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import { ReactLenis, useLenis } from '@/libs/react-lenis';
 
-type PropsType = React.PropsWithChildren & {};
+interface IProps extends React.PropsWithChildren {}
 
-export const SmoothScroll: React.FC<PropsType> = ({ children }) => {
+export const SmoothScroll: React.FC<IProps> = ({ children }) => {
   const lenis = useLenis();
   const pathname = usePathname();
 

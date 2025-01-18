@@ -10,7 +10,7 @@ import { Button } from '@/components/ui';
 import Slide1Img from '@/assets/images/home/hero/slide-1.jpg';
 import Slide2Img from '@/assets/images/home/hero/slide-2.jpg';
 import { content } from '@/constants/main-page-content';
-import styles from './Hero.module.scss';
+import styles from './index.module.scss';
 
 export const Hero = () => {
   return (

@@ -1,13 +1,12 @@
 import { Container } from '@/components/layout';
-import { Copyright, ToTopButton } from '@/components/common';
+import { Copyright, Social, ToTopButton } from '@/components/common';
 import { useMediaQuery } from '@/hooks/useMediaQuery';
 import { MediaQuery } from '@/types';
 import styles from './Footer.module.scss';
-import { Social } from '@/components/common/Social/Social';
 
-type PropsType = React.PropsWithChildren & {};
+interface IProps extends React.PropsWithChildren {}
 
-export const Footer: React.FC<PropsType> = () => {
+export const Footer: React.FC<IProps> = () => {
   const isDesktop = useMediaQuery(MediaQuery.Desktop);
 
   return (

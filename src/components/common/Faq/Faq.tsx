@@ -1,12 +1,15 @@
 import { Accordion } from '@/components/ui';
-import styles from './Faq.module.scss';
 import { Container } from '@/components/layout';
+import styles from './Faq.module.scss';
 
-type FaqProps = {
-  items: { title: string; content: string }[];
-};
+interface IProps {
+  items: {
+    title: string;
+    content: string;
+  }[];
+}
 
-export const Faq: React.FC<FaqProps> = ({ items }) => {
+export const Faq: React.FC<IProps> = ({ items }) => {
   return (
     <Container className={styles.container}>
       <div className={styles.wrapper}>

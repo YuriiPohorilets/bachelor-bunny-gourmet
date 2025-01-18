@@ -2,18 +2,13 @@ import { AnimatePresence, motion } from 'motion/react';
 
 import styles from './AccordionItem.module.scss';
 
-export type AccordionItemProps = React.PropsWithChildren & {
+export interface IProps extends React.PropsWithChildren {
   title: string;
   isOpen: boolean;
   onClick: () => void;
-};
+}
 
-export const AccordionItem: React.FC<AccordionItemProps> = ({
-  title,
-  isOpen,
-  onClick,
-  children,
-}) => {
+export const AccordionItem: React.FC<IProps> = ({ title, isOpen, onClick, children }) => {
   const variants = {
     close: { height: 0, opacity: 0 },
     open: { height: 'auto', opacity: 1 },

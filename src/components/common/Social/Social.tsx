@@ -5,17 +5,18 @@ import { IconWrapper } from '@/components/layout';
 import { FacebookIcon, InstagramIcon, YoutubeIcon } from '@/components/icons';
 import styles from './Social.module.scss';
 
-type PropsType = {
+interface IProps {
   variant?: 'text' | 'icon';
-  direction?: 'row' | 'column';
-};
+  direction?: 'row' | 'colbumn';
+}
 
-export const Social: React.FC<PropsType> = ({ variant = 'icon', direction = 'row' }) => {
+export const Social: React.FC<IProps> = ({ variant = 'icon', direction = 'row' }) => {
   const icons = {
     facebook: <FacebookIcon />,
     instagram: <InstagramIcon />,
     youtube: <YoutubeIcon />,
   };
+
   return (
     <ul className={clsx(styles.list, styles[direction])}>
       {social.map(item => (

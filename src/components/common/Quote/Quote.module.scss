@@ -1,0 +1,67 @@
+@import '@/styles/mixins';
+@import '@/styles/variables';
+
+.content {
+  position: relative;
+
+  margin-inline: 1.1em;
+
+  color: var(--white, #fff);
+  font-family: $font-gotham-pro;
+  font-size: 1.25rem;
+
+  @include tablet {
+    font-size: 1.75rem;
+  }
+
+  @include desktop-lg {
+    font-size: 2.25rem;
+  }
+}
+
+.content.start {
+  text-align: left;
+}
+
+.content.center {
+  text-align: center;
+}
+
+.content.end {
+  text-align: right;
+}
+
+.content::before,
+.content::after {
+  position: absolute;
+
+  color: var(--white, #fff);
+  font-family: $font-gotham-pro;
+  font-size: 3.125rem;
+  font-weight: 400;
+  line-height: normal;
+
+  @include tablet {
+    font-size: 4.25rem;
+  }
+
+  @include desktop-lg {
+    font-size: 6.25rem;
+  }
+}
+
+.content::before {
+  content: '\201C';
+  top: 0;
+  left: 0;
+
+  translate: -100% -40%;
+}
+
+.content::after {
+  content: '\201D';
+  bottom: 0;
+  right: 0;
+
+  translate: 100% 80%;
+}

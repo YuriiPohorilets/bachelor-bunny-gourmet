@@ -2,11 +2,11 @@ import { IconWrapper } from '@/components/layout';
 import { CrownIcon } from '@/components/icons';
 import styles from './Logo.module.scss';
 
-type LogoProps = {
+interface IProps {
   showLabel?: boolean;
-};
+}
 
-export const Logo: React.FC<LogoProps> = ({ showLabel }) => {
+export const Logo: React.FC<IProps> = ({ showLabel }) => {
   return (
     <a href="/" aria-label="Logo" className={styles.logo}>
       <IconWrapper className={styles.iconWrapper}>

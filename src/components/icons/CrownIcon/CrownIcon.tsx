@@ -1,8 +1,8 @@
-type IconProps = {
+interface IProps {
   color?: string;
-};
+}
 
-export const CrownIcon: React.FC<IconProps> = ({ color = 'currentColor' }) => {
+export const CrownIcon: React.FC<IProps> = ({ color = 'currentColor' }) => {
   const id = Math.random() * 100_000;
 
   return (

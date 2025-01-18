@@ -1,13 +1,13 @@
 import clsx from 'clsx';
 import styles from './Button.module.scss';
 
-type PropsType = React.ButtonHTMLAttributes<HTMLButtonElement> & {
+interface IProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   color?: 'primary' | 'accent';
   fullWidth?: boolean;
   component?: React.ElementType;
-};
+}
 
-export const Button: React.FC<PropsType> = ({
+export const Button: React.FC<IProps> = ({
   children,
   color = 'primary',
   fullWidth,

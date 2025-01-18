@@ -1,8 +1,8 @@
-type IconProps = {
+interface IProps {
   color?: string;
-};
+}
 
-export const BasicArrowIcon: React.FC<IconProps> = ({ color = 'currentColor' }) => {
+export const BasicArrowIcon: React.FC<IProps> = ({ color = 'currentColor' }) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" viewBox="0 0 9 9" fill="none">
       <mask id="mask0_1953_3638" maskUnits="userSpaceOnUse" x="-4" y="-3" width="17" height="17">

@@ -1,8 +1,8 @@
 import { Footer, Header, SmoothScroll } from '@/components/layout';
 
-type PropsType = React.PropsWithChildren & {};
+interface IProps extends React.PropsWithChildren {}
 
-export const RootLayout: React.FC<PropsType> = ({ children }) => {
+export const RootLayout: React.FC<IProps> = ({ children }) => {
   return (
     <>
       <SmoothScroll>

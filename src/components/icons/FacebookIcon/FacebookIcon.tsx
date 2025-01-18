@@ -1,8 +1,8 @@
-type IconProps = {
+interface IProps {
   color?: string;
-};
+}
 
-export const FacebookIcon: React.FC<IconProps> = ({ color = 'currentColor' }) => {
+export const FacebookIcon: React.FC<IProps> = ({ color = 'currentColor' }) => {
   return (
     <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path

@@ -1,9 +1,7 @@
 import Head from 'next/head';
 
-import { Section } from '@/components/layout';
-import { Hero } from '@/scenes/Home';
-import { useMediaQuery } from '@/hooks/useMediaQuery';
-import { MediaQuery } from '@/types';
+import { Hero } from '@/scenes/Home/Hero';
+import { About } from '@/scenes/Home/About';
 
 const HomePage = () => {
   // const isDesktop = useMediaQuery(MediaQuery.Desktop);
@@ -21,10 +19,7 @@ const HomePage = () => {
       </Head>
 
       <Hero />
-
-      <Section>
-        <div style={{ height: '100vh' }}></div>
-      </Section>
+      <About />
     </>
   );
 };
