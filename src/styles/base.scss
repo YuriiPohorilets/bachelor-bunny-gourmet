@@ -15,6 +15,30 @@
   object-position: center;
 }
 
+.swiper-pagination-bullet {
+  width: 20px;
+  height: 20px;
+
+  opacity: 1;
+  background-color: var(--main, #262626);
+  border: 1px solid;
+  border-color: var(--white, #ffffff);
+  border-radius: 50%;
+
+  transition: background-color 300ms ease-in-out, border-color 300ms ease-in-out,
+    scale 200ms ease-in-out;
+
+  cursor: pointer;
+
+  &:is(:not(.swiper-pagination-bullet-active):hover, :focus-visible) {
+    scale: 1.1;
+  }
+}
+
+.swiper-pagination-bullet-active {
+  background-color: var(--white, #ffffff);
+}
+
 html.lenis,
 html.lenis body {
   height: auto;

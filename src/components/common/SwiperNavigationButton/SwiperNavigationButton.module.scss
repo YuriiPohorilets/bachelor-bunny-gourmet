@@ -1,0 +1,36 @@
+@import '@/styles/mixins';
+@import '@/styles/variables';
+
+.button {
+  @include button;
+  @include flex-center;
+  flex-shrink: 0;
+
+  color: var(--golden, #be8900);
+  background-color: transparent;
+  border: none;
+
+  & > svg {
+    @include square(100%);
+  }
+
+  @include hover-focus {
+    color: var(--white, #fff);
+  }
+}
+
+.next {
+  rotate: 180deg;
+}
+
+.small {
+  @include square(60px);
+}
+
+.medium {
+  @include square(64px);
+}
+
+.large {
+  @include square(130px);
+}

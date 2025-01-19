@@ -1,11 +1,7 @@
 import Head from 'next/head';
-
-import { Hero } from '@/scenes/Home/Hero';
-import { About } from '@/scenes/Home/About';
+import { About, Services, Hero } from '@/modules/home-page';
 
 const HomePage = () => {
-  // const isDesktop = useMediaQuery(MediaQuery.Desktop);
-
   return (
     <>
       <Head>
@@ -20,6 +16,7 @@ const HomePage = () => {
 
       <Hero />
       <About />
+      <Services />
     </>
   );
 };
