@@ -1,0 +1,148 @@
+@import '@/styles/mixins';
+@import '@/styles/variables';
+
+.section {
+  background-color: transparent;
+}
+
+.container {
+  padding-inline: 2rem;
+
+  @include desktop-lg {
+    padding-inline: 4.5rem;
+  }
+}
+
+.wrapper {
+  position: relative;
+
+  padding-top: 100px;
+  padding-bottom: 150px;
+  height: 100dvh;
+  min-height: 800px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 75px;
+
+  @include desktop-lg {
+    padding-top: 116px;
+    padding-bottom: 170px;
+    min-height: 900px;
+
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+}
+
+.title {
+  color: var(--white, #fff);
+  text-align: center;
+  font-family: $font-cormorant-unicase;
+  font-size: 1.875rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+
+  @include desktop-lg {
+    font-size: 6.25rem;
+  }
+}
+
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+
+  max-width: 310px;
+
+  @include tablet {
+    max-width: 500px;
+  }
+}
+
+.subtitle {
+  color: var(--white, #fff);
+  font-family: $font-cormorant-unicase;
+  font-size: 3.125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.description {
+  color: var(--white, #fff);
+  font-size: 1.125rem;
+
+  line-height: 1.27em;
+}
+
+.link {
+  align-self: flex-end;
+  margin-top: 245px;
+
+  @include desktop-lg {
+    margin-top: 290px;
+    width: 100%;
+  }
+}
+
+.mediaWrapper {
+  position: absolute;
+  top: 250px;
+  left: -71px;
+  z-index: -1;
+
+  width: 744px;
+  height: 522px;
+
+  @include desktop-lg {
+    left: auto;
+    right: 50%;
+    top: auto;
+    bottom: 180px;
+
+    width: 1100px;
+    height: 700px;
+  }
+}
+
+.imageWrapper {
+  @include square(100%);
+  position: absolute;
+
+  & > img {
+    @include image-cover;
+  }
+}
+
+.imageWrapper:nth-of-type(1) {
+  top: 0;
+  left: 0;
+
+  max-width: 744px;
+  max-height: 442px;
+
+  @include desktop-lg {
+    max-width: 940px;
+    max-height: 557px;
+  }
+}
+
+.imageWrapper:nth-of-type(2) {
+  bottom: 0;
+  left: 35px;
+
+  max-width: 266px;
+  max-height: 272px;
+
+  @include desktop-lg {
+    left: auto;
+    right: 0;
+
+    max-width: 467px;
+    max-height: 478px;
+  }
+}

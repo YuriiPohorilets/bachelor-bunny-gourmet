@@ -1,6 +1,9 @@
 @import '@/styles/mixins';
 @import '@/styles/variables';
 
+$frame-width: 900px;
+$frame-height: 210px;
+
 .section {
   &::after {
     content: '';
@@ -202,10 +205,10 @@
     clip-path: polygon(
       0 0,
       0 100%,
-      calc((100% - 900px) / 2) 100%,
-      calc((100% - 900px) / 2) calc(100% - 210px),
-      calc((100% + 900px) / 2) calc(100% - 210px),
-      calc((100% + 900px) / 2) 100%,
+      calc((100% - $frame-width) / 2) 100%,
+      calc((100% - $frame-width) / 2) calc(100% - $frame-height),
+      calc((100% + $frame-width) / 2) calc(100% - $frame-height),
+      calc((100% + $frame-width) / 2) 100%,
       100% 100%,
       100% 0
     );
