@@ -1,6 +1,5 @@
 import Head from 'next/head';
-import { About, Services, Hero, GrabAndGo } from '@/modules/home-page';
-import { DeliveryService } from '@/modules/home-page/delivery-service';
+import { About, Services, Hero, GrabAndGo, DeliveryService, Events } from '@/modules/home-page';
 
 const HomePage = () => {
   return (
@@ -20,6 +19,7 @@ const HomePage = () => {
       <Services />
       <GrabAndGo />
       <DeliveryService />
+      <Events />
     </>
   );
 };

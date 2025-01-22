@@ -6,9 +6,6 @@ $frame-width: 780px;
 // $frame-height: 416px;
 $frame-height: 38%;
 
-.section {
-}
-
 .container {
   padding-inline: 1.5rem;
 
@@ -42,7 +39,7 @@ $frame-height: 38%;
 
   @include desktop-lg {
     position: absolute;
-    top: 60px;
+    top: 0;
     left: 10%;
 
     padding-block: 20px;

@@ -3,6 +3,8 @@ import { Container, Section } from '@/components/layout';
 import styles from './index.module.scss';
 import Image from 'next/image';
 import clsx from 'clsx';
+import { Link } from '@/components/ui';
+import { PagePath } from '@/types';
 
 export interface IProps {
   interactor: IGrabAndGoInteractor;
@@ -30,9 +32,9 @@ export const GrabAndGoRouter: React.FC<IProps> = ({ interactor }) => {
 
             <p className={styles.description}>{interactor.content.description}</p>
 
-            <button type="button" className={styles.link}>
-              More
-            </button>
+            <Link href={PagePath.GrabAndGo} fullWidth className={styles.link}>
+              {interactor.matches.isDesktop ? 'GRAB & GO' : 'more'}
+            </Link>
           </div>
         </div>
       </Container>

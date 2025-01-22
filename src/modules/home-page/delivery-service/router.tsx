@@ -7,8 +7,9 @@ import 'swiper/css/effect-fade';
 
 import { IDeliveryServiceInteractor } from './interactor';
 import { Container, Section } from '@/components/layout';
+import { Link } from '@/components/ui';
+import { PagePath } from '@/types';
 import styles from './index.module.scss';
-import { Button } from '@/components/ui';
 
 export interface IProps {
   interactor: IDeliveryServiceInteractor;
@@ -16,7 +17,7 @@ export interface IProps {
 
 export const DeliveryServiceRouter: React.FC<IProps> = ({ interactor }) => {
   return (
-    <Section id="service-delivery" className={styles.section}>
+    <Section id="service-delivery">
       <div className={styles.sliderWrapper}>
         <Swiper
           effect={'fade'}
@@ -44,7 +45,9 @@ export const DeliveryServiceRouter: React.FC<IProps> = ({ interactor }) => {
             <div className={styles.descriptionWrapper}>
               <p className={styles.description}>{interactor.content.description}</p>
 
-              <Button>more</Button>
+              <Link href={PagePath.Delivery}>
+                {interactor.matches.isDesktop ? 'In-Home Executive Delivery' : 'more'}
+              </Link>
             </div>
           </div>
         </div>

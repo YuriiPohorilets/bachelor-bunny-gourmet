@@ -1,0 +1,89 @@
+@import '@/styles/mixins';
+@import '@/styles/variables';
+
+$frame-width: 780px;
+$frame-height: 370px;
+
+.section {
+  &::after {
+    content: '';
+    @include square(100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    display: block;
+
+    background-color: red;
+
+    background-image: url('../../../assets/images/home/catering-and-events/bg.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @include desktop-lg {
+      clip-path: polygon(
+        calc(100% - ($frame-width + 46px)) 100%,
+        0 100%,
+        0 0,
+        100% 0,
+        100% 100%,
+        calc(100% - 46px) 100%,
+        calc(100% - 46px) calc(100% - $frame-height),
+        calc(100% - ($frame-width + 46px)) calc(100% - $frame-height)
+      );
+    }
+  }
+}
+
+.container {
+  padding-inline: 1.5rem;
+
+  @include desktop-lg {
+    padding-inline: 3rem;
+  }
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+
+  padding-top: 50px;
+  padding-bottom: 230px;
+  height: 100dvh;
+  min-height: 800px;
+
+  @include desktop-lg {
+    padding-bottom: 60px;
+    min-height: 900px;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 24px;
+
+  max-width: 500px;
+}
+
+.title {
+  color: var(--white, #fff);
+  font-family: $font-cormorant-unicase;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1em;
+}
+
+.description {
+  color: var(--white, #fff);
+  font-size: 1.125rem;
+  line-height: calc(23 / 18);
+}
+
+.descriptionWrapper {
+}
