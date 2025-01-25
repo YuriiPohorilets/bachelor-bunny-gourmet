@@ -8,7 +8,6 @@ export const RootLayout: React.FC<IProps> = ({ children }) => {
       <SmoothScroll>
         <Header />
         <main>{children}</main>
-        <Footer />
       </SmoothScroll>
     </>
   );

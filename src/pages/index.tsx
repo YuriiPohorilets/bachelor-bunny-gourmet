@@ -7,7 +7,9 @@ import {
   DeliveryService,
   Events,
   OurClients,
+  Community,
 } from '@/modules/home-page';
+import { Footer } from '@/components/layout';
 
 const HomePage = () => {
   return (
@@ -29,6 +31,10 @@ const HomePage = () => {
       <DeliveryService />
       <Events />
       <OurClients />
+      <div className="home bgWrapper">
+        <Community />
+        <Footer />
+      </div>
     </>
   );
 };

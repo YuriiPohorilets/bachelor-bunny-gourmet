@@ -59,3 +59,14 @@ html.lenis body {
 .lenis.lenis-smooth iframe {
   pointer-events: none;
 }
+
+.bgWrapper {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.bgWrapper.home {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%),
+    url('../assets/images/home/footer-bg.jpg');
+}

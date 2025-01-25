@@ -1,23 +1,25 @@
 import clsx from 'clsx';
 import styles from './Button.module.scss';
 
-interface IProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface IProps<T extends React.ElementType = 'button'> {
+  component?: T;
   color?: 'primary' | 'accent';
   fullWidth?: boolean;
-  component?: React.ElementType;
+  children: React.ReactNode;
 }
 
-export const Button: React.FC<IProps> = ({
-  children,
+export const Button = <T extends React.ElementType = 'button'>({
+  component,
   color = 'primary',
   fullWidth,
-  component: Component = 'button',
+  children,
   ...rest
-}) => {
+}: IProps<T> & React.ComponentPropsWithoutRef<T>) => {
+  const Component = component || 'button';
   const buttonClasses = clsx(styles.button, styles[color], fullWidth && styles.fullWidth);
 
   return (
-    <Component {...rest} className={buttonClasses}>
+    <Component className={buttonClasses} {...rest}>
       {children}
     </Component>
   );
