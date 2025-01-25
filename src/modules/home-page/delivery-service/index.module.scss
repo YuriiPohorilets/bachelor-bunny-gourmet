@@ -94,6 +94,9 @@ $frame-height: 416px;
 }
 
 .pagination {
+  position: absolute;
+  bottom: 48px;
+
   display: flex;
   align-items: center;
   gap: 12px;
@@ -102,9 +105,8 @@ $frame-height: 416px;
   width: fit-content;
 
   @include desktop-lg {
-    position: absolute;
-    top: 290%;
-    right: -110%;
+    bottom: 194px;
+    right: 284px;
   }
 }
 

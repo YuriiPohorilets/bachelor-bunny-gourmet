@@ -1,0 +1,14 @@
+@import '@/styles/mixins';
+
+.list {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.item {
+  @include square(32px);
+  @include flex-center;
+
+  color: var(--white, #fff);
+}

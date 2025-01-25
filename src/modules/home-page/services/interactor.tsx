@@ -55,7 +55,6 @@ export const useServicesInteractor = (): IServicesInteractor => {
   };
 
   const handlePrevSlide = () => swiperRef.current?.slidePrev();
-
   const handleNextSlide = () => swiperRef.current?.slideNext();
 
   return {

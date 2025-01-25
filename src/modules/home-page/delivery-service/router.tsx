@@ -4,7 +4,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, EffectFade } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/effect-fade';
-// import 'swiper/css/pagination';
 
 import { IDeliveryServiceInteractor } from './interactor';
 import { Container, Section } from '@/components/layout';
@@ -48,13 +47,13 @@ export const DeliveryServiceRouter: React.FC<IProps> = ({ interactor }) => {
             <div className={styles.descriptionWrapper}>
               <p className={styles.description}>{interactor.content.description}</p>
 
-              <SwiperPagination id="deliver-service-pagination" className={styles.pagination} />
-
               <Link href={PagePath.Delivery} className={styles.link}>
                 {interactor.matches.isDesktop ? 'In-Home Executive Delivery' : 'more'}
               </Link>
             </div>
           </div>
+
+          <SwiperPagination id="deliver-service-pagination" className={styles.pagination} />
         </div>
       </Container>
     </Section>

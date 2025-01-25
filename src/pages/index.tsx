@@ -1,5 +1,13 @@
 import Head from 'next/head';
-import { About, Services, Hero, GrabAndGo, DeliveryService, Events } from '@/modules/home-page';
+import {
+  About,
+  Services,
+  Hero,
+  GrabAndGo,
+  DeliveryService,
+  Events,
+  OurClients,
+} from '@/modules/home-page';
 
 const HomePage = () => {
   return (
@@ -20,6 +28,7 @@ const HomePage = () => {
       <GrabAndGo />
       <DeliveryService />
       <Events />
+      <OurClients />
     </>
   );
 };
