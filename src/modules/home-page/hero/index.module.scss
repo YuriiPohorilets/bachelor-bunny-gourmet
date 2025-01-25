@@ -15,25 +15,16 @@
 
 .wrapper {
   display: flex;
-  align-items: center;
   justify-content: center;
 
-  height: calc(100dvh - 32px * 2);
-  min-height: 720px;
-
-  @include desktop-lg {
-    min-height: 900px;
-  }
+  height: 100%;
 }
 
 .contentWrapper {
-  height: 100%;
-
   display: flex;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
   justify-content: space-between;
-  flex-grow: 1;
 }
 
 .content {
@@ -47,8 +38,8 @@
 
 .titleWrapper {
   display: flex;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
 }
 
 .iconWrapper {
@@ -106,7 +97,7 @@
   text-align: center;
   font-family: $font-gotham-pro;
   font-size: 1.25rem;
-  letter-spacing: 1px;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   line-height: 1.13;
   font-weight: 400;

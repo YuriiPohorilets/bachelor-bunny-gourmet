@@ -5,6 +5,8 @@ $frame-width: 900px;
 $frame-height: 210px;
 
 .section {
+  padding-top: 160px;
+
   &::after {
     content: '';
     position: absolute;
@@ -21,13 +23,17 @@ $frame-height: 210px;
       height: 460px;
     }
   }
+
+  @include desktop-xxl {
+    padding-top: 250px;
+  }
 }
 
 .container {
-  padding-inline: 0.5rem;
+  padding-inline: 8px;
 
   @include desktop-lg {
-    padding-inline: 3rem;
+    padding-inline: 48px;
   }
 }
 
@@ -40,14 +46,7 @@ $frame-height: 210px;
   justify-content: flex-start;
   flex-direction: column;
 
-  padding-top: 160px;
-  height: 100dvh;
-  min-height: 800px;
-
-  @include desktop-lg {
-    padding-top: 250px;
-    min-height: 900px;
-  }
+  height: 100%;
 }
 
 .labelWrapper {

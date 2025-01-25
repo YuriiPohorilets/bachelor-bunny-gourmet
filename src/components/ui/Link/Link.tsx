@@ -10,9 +10,9 @@ interface IProps extends LinkProps, React.PropsWithChildren {
   className?: string | string[];
 }
 
-export const Link: React.FC<IProps> = ({ children, fullWidth, ...rest }) => {
+export const Link: React.FC<IProps> = ({ children, fullWidth, className, ...rest }) => {
   return (
-    <NextLink {...rest} className={clsx(styles.link, fullWidth && styles.fullWidth)}>
+    <NextLink {...rest} className={clsx(styles.link, fullWidth && styles.fullWidth, className)}>
       <span className={styles.label}>{children}</span>
 
       <span className={styles.iconWrapper}>

@@ -24,7 +24,7 @@ export const ServicesRouter: React.FC<IProps> = ({ interactor }) => {
           speed={1600}
           autoplay={{ delay: 3200 }}
           modules={[Autoplay, Pagination, EffectFade]}
-          pagination={{ el: '.pagination', clickable: true }}
+          pagination={{ el: '#services-pagination', clickable: true }}
           loop={true}
           onSlideChange={interactor.handleSlideChange}
           onSwiper={swiper => (interactor.swiperRef.current = swiper)}
@@ -58,7 +58,7 @@ export const ServicesRouter: React.FC<IProps> = ({ interactor }) => {
                 </AnimatePresence>
               </div>
 
-              <SwiperPagination className={styles.pagination} />
+              <SwiperPagination id="services-pagination" className={styles.pagination} />
 
               <div className={styles.controlsWrapper}>
                 {interactor.matches.isDesktop && (

@@ -1,10 +1,11 @@
-import { IGrabAndGoInteractor } from './interactor';
-import { Container, Section } from '@/components/layout';
-import styles from './index.module.scss';
 import Image from 'next/image';
 import clsx from 'clsx';
+
+import { IGrabAndGoInteractor } from './interactor';
+import { Container, Section } from '@/components/layout';
 import { Link } from '@/components/ui';
 import { PagePath } from '@/types';
+import styles from './index.module.scss';
 
 export interface IProps {
   interactor: IGrabAndGoInteractor;
@@ -32,7 +33,11 @@ export const GrabAndGoRouter: React.FC<IProps> = ({ interactor }) => {
 
             <p className={styles.description}>{interactor.content.description}</p>
 
-            <Link href={PagePath.GrabAndGo} fullWidth className={styles.link}>
+            <Link
+              href={PagePath.GrabAndGo}
+              fullWidth={interactor.matches.isDesktop}
+              className={styles.link}
+            >
               {interactor.matches.isDesktop ? 'GRAB & GO' : 'more'}
             </Link>
           </div>

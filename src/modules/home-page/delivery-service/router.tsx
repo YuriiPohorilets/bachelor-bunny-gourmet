@@ -4,11 +4,13 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, EffectFade } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/effect-fade';
+// import 'swiper/css/pagination';
 
 import { IDeliveryServiceInteractor } from './interactor';
 import { Container, Section } from '@/components/layout';
 import { Link } from '@/components/ui';
 import { PagePath } from '@/types';
+import { SwiperPagination } from '@/components/common';
 import styles from './index.module.scss';
 
 export interface IProps {
@@ -17,13 +19,14 @@ export interface IProps {
 
 export const DeliveryServiceRouter: React.FC<IProps> = ({ interactor }) => {
   return (
-    <Section id="service-delivery">
+    <Section id="service-delivery" className={styles.section}>
       <div className={styles.sliderWrapper}>
         <Swiper
           effect={'fade'}
           speed={1600}
           autoplay={{ delay: 3200 }}
           modules={[Autoplay, Pagination, EffectFade]}
+          pagination={{ el: '#deliver-service-pagination', clickable: true }}
           loop={true}
           className={styles.slider}
         >
@@ -45,7 +48,9 @@ export const DeliveryServiceRouter: React.FC<IProps> = ({ interactor }) => {
             <div className={styles.descriptionWrapper}>
               <p className={styles.description}>{interactor.content.description}</p>
 
-              <Link href={PagePath.Delivery}>
+              <SwiperPagination id="deliver-service-pagination" className={styles.pagination} />
+
+              <Link href={PagePath.Delivery} className={styles.link}>
                 {interactor.matches.isDesktop ? 'In-Home Executive Delivery' : 'more'}
               </Link>
             </div>

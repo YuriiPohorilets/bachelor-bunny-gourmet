@@ -2,35 +2,36 @@
 @import '@/styles/variables';
 
 .section {
-  background-color: transparent;
+  padding-top: 100px;
+  padding-bottom: 162px;
+
+  max-height: 1024px;
+
+  @include desktop-lg {
+    padding-top: 116px;
+    padding-bottom: 170px;
+  }
 }
 
 .container {
-  padding-inline: 2rem;
+  padding-inline: 32px;
 
   @include desktop-lg {
-    padding-inline: 4.5rem;
+    padding-inline: 72px;
   }
 }
 
 .wrapper {
   position: relative;
 
-  padding-top: 100px;
-  padding-bottom: 150px;
-  height: 100dvh;
-  min-height: 800px;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 75px;
 
-  @include desktop-lg {
-    padding-top: 116px;
-    padding-bottom: 170px;
-    min-height: 900px;
+  height: 100%;
 
+  @include desktop-lg {
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-end;

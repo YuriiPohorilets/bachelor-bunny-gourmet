@@ -2,15 +2,22 @@
 @import '@/styles/variables';
 
 $frame-width: 780px;
-// $frame-width: 40%;
-// $frame-height: 416px;
-$frame-height: 38%;
+$frame-height: 416px;
 
-.container {
-  padding-inline: 1.5rem;
+.section {
+  padding-top: 36px;
+  min-height: 832px;
 
   @include desktop-lg {
-    padding-inline: 3rem;
+    padding-top: 0;
+  }
+}
+
+.container {
+  padding-inline: 24px;
+
+  @include desktop-lg {
+    padding-inline: 48px;
   }
 }
 
@@ -20,14 +27,7 @@ $frame-height: 38%;
   justify-content: flex-start;
   flex-direction: column;
 
-  padding-top: 160px;
-  height: 100dvh;
-  min-height: 800px;
-
-  @include desktop-lg {
-    padding-top: 250px;
-    min-height: 900px;
-  }
+  height: 100%;
 }
 
 .content {
@@ -66,11 +66,7 @@ $frame-height: 38%;
 .descriptionWrapper {
   display: flex;
   flex-direction: column;
-  gap: 120px;
-
-  @include desktop-lg {
-    gap: 40px;
-  }
+  gap: 40px;
 }
 
 .description {
@@ -79,18 +75,55 @@ $frame-height: 38%;
   line-height: 1.4em;
 }
 
+.link {
+  align-self: flex-end;
+}
+
 .sliderWrapper {
   position: absolute;
-  top: 0;
+  top: 72px;
   left: 0;
   z-index: -1;
 
   width: 100%;
   height: 100%;
+
+  @include desktop-lg {
+    top: 0;
+  }
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin-inline: auto;
+  width: fit-content;
+
+  @include desktop-lg {
+    position: absolute;
+    top: 290%;
+    right: -110%;
+  }
 }
 
 .slider {
   position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0) 73%, #0e0d0d 100%),
+      linear-gradient(0deg, rgba(21, 20, 19, 0.5) 0%, rgba(21, 20, 19, 0.5) 100%);
+  }
 
   @include desktop-lg {
     clip-path: polygon(
