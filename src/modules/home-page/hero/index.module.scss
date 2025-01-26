@@ -25,6 +25,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  gap: 54px;
+
+  @include tablet {
+    gap: 0px;
+  }
 }
 
 .content {
@@ -90,6 +95,16 @@
       font-size: 2rem;
     }
   }
+
+  @include desktop-xl {
+    & > span:has(+ span) {
+      font-size: 7.3125rem;
+    }
+
+    & > span + span {
+      font-size: 3.625rem;
+    }
+  }
 }
 
 .subtitle {
@@ -108,12 +123,14 @@
 }
 
 .benefitsWrapper {
-  margin-top: auto;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 52px;
+
+  @include tablet {
+    margin-top: auto;
+  }
 }
 
 .benefits {

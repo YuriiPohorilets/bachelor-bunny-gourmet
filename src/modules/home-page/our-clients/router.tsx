@@ -7,7 +7,6 @@ import { Container, IconWrapper, Section } from '@/components/layout';
 import { Quote, Rating, SwiperNavigationButton } from '@/components/common';
 import { CrownIcon } from '@/components/icons';
 import styles from './index.module.scss';
-import { AnimatePresence } from 'motion/dist/react';
 
 export interface IProps {
   interactor: IOurClientsInteractor;
