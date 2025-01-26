@@ -1,0 +1,142 @@
+@import '@/styles/mixins';
+@import '@/styles/variables';
+
+.section {
+  @include bg-cover;
+
+  padding-top: 160px;
+  padding-bottom: 44px;
+
+  background-image: url('../../../assets/images/about/hero/hero-bg.jpg');
+  background-position: -350px;
+
+  @include tablet {
+    background-position: center;
+  }
+
+  @include desktop-lg {
+    padding-block: 140px;
+  }
+
+  &::after {
+    content: '';
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    display: block;
+    width: 100%;
+    height: 500px;
+
+    background: linear-gradient(0, #000 18%, rgba(0, 0, 0, 0) 84%);
+  }
+}
+
+.container {
+  padding-inline: 28px;
+}
+
+.wrapper {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+
+  height: 100%;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  height: 100%;
+}
+
+.title {
+  margin-top: auto;
+  margin-bottom: 8px;
+  max-width: 213px;
+
+  color: var(--white, #fff);
+  text-align: center;
+  font-family: $font-cormorant-unicase;
+  font-size: 2.75rem;
+  font-weight: 500;
+  line-height: 0.97;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+
+  @include tablet {
+    max-width: none;
+
+    font-size: 4.5rem;
+  }
+
+  @include desktop-lg {
+    font-size: 8.125rem;
+    letter-spacing: -0.01em;
+  }
+}
+
+.subtitle {
+  margin-bottom: 24px;
+
+  color: var(--white, #fff);
+  text-align: center;
+  font-family: $font-gotham-pro;
+  font-size: 1rem;
+  line-height: 1.13;
+  text-transform: uppercase;
+
+  @include tablet {
+    font-size: 1.25rem;
+  }
+
+  @include desktop-lg {
+    margin-bottom: 0;
+
+    font-size: 1.5rem;
+    letter-spacing: 0.06em;
+  }
+}
+
+.description {
+  margin-top: auto;
+  margin-bottom: 32px;
+  max-width: 307px;
+
+  color: var(--white, #fff);
+  text-align: center;
+  font-family: $font-gotham-pro;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+
+  @include desktop-lg {
+    margin-bottom: 0;
+    max-width: none;
+
+    font-size: 1.5rem;
+    letter-spacing: 0.06em;
+  }
+}
+
+.buttonWrapper {
+  margin-inline: auto;
+  width: min(100%, 500px);
+
+  @include desktop-lg {
+    position: fixed;
+    top: 280px;
+    right: 25px;
+    z-index: 300;
+
+    max-width: none;
+    width: 400px;
+    rotate: -90deg;
+
+    transform-origin: right center;
+  }
+}
