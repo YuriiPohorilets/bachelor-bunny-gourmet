@@ -1,7 +1,7 @@
 export const social = [
-  { label: 'Facebook', name: 'facebook', link: 'google.com' },
-  { label: 'Instagram', name: 'instagram', link: 'google.com' },
-  { label: 'Youtube', name: 'youtube', link: 'google.com' },
+  { label: 'Facebook', name: 'facebook', link: 'https://www.facebook.com/Bachelorbunny' },
+  { label: 'Instagram', name: 'instagram', link: 'https://www.instagram.com/bachelorbunny' },
+  { label: 'Youtube', name: 'youtube', link: 'https://www.youtube.com/@SophiSummers' },
 ];
 
 export const address = [{}];

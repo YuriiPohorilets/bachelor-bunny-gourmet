@@ -9,7 +9,7 @@ import {
   OurClients,
   Community,
 } from '@/modules/home-page';
-import { Footer } from '@/components/layout';
+import { Footer } from '@/modules/footer';
 
 const HomePage = () => {
   return (

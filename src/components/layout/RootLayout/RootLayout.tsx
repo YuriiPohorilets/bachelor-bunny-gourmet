@@ -1,4 +1,4 @@
-import { Footer, Header, SmoothScroll } from '@/components/layout';
+import { Header, SmoothScroll } from '@/components/layout';
 
 interface IProps extends React.PropsWithChildren {}
 

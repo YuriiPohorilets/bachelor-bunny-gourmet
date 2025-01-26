@@ -5,7 +5,6 @@ export { RootLayout } from './RootLayout/RootLayout';
 export { SmoothScroll } from './SmoothScroll/SmoothScroll';
 
 export { Header } from './Header/Header';
-export { Footer } from './Footer/Footer';
 export { Section } from './Section/Section';
 export { Container } from './Container/Container';
 
