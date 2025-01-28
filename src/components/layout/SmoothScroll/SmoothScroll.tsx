@@ -11,10 +11,13 @@ export const SmoothScroll: React.FC<IProps> = ({ children }) => {
   useEffect(() => {
     if (!lenis) return;
 
-    if (lenis.isScrolling) lenis.stop();
+    setTimeout(() => {
+      if (lenis.isScrolling) lenis.stop();
 
-    window.scrollTo({ top: 0, behavior: 'instant' });
-    lenis.start();
+      window.scrollTo({ top: 0, behavior: 'instant' });
+
+      lenis.start();
+    }, 450);
   }, [lenis, pathname]);
 
   return (

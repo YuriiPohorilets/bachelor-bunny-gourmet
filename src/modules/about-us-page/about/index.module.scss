@@ -1,0 +1,145 @@
+@import '@/styles/mixins';
+@import '@/styles/variables';
+
+.section {
+  padding-bottom: 160px;
+
+  height: fit-content;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    display: block;
+    width: 100%;
+    height: 425px;
+
+    background: linear-gradient(0deg, #000 28%, rgba(0, 0, 0, 0) 84%);
+  }
+
+  @include desktop-lg {
+    padding-top: 180px;
+    padding-bottom: 0;
+
+    &::after {
+      bottom: auto;
+      top: 0;
+
+      height: 326px;
+
+      background: linear-gradient(180deg, #000 28%, rgba(0, 0, 0, 0) 84%);
+    }
+  }
+}
+
+.container {
+  padding-inline: 8px;
+
+  @include desktop-lg {
+    padding-inline: 48px;
+  }
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 55px;
+
+  height: 100%;
+
+  @include desktop-lg {
+    justify-content: space-between;
+    flex-direction: row;
+  }
+}
+
+.videoWrapper {
+  @include flex-center;
+  width: min(100%, 1106px);
+  max-height: 610px;
+
+  @include desktop-lg {
+    margin-left: -48px;
+  }
+}
+
+.video {
+  @include image-cover;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 120px;
+
+  @include desktop-lg {
+    flex-direction: column-reverse;
+    align-items: flex-end;
+    gap: 84px;
+  }
+}
+
+.quote {
+  width: min(100%, 255px);
+
+  font-size: 1.25rem;
+  font-weight: 400;
+
+  @include desktop-lg {
+    position: absolute;
+    bottom: 65px;
+    left: 15%;
+    z-index: 3;
+
+    translate: -100% 0;
+
+    width: 960px;
+
+    font-size: 2.75rem;
+    line-height: 1.13;
+    letter-spacing: -0.02em;
+  }
+}
+
+.imageWrapper {
+  margin-right: -8px;
+  width: min(100%, 435px);
+  aspect-ratio: 1 / 2;
+
+  align-self: flex-end;
+
+  @include desktop-lg {
+    margin-right: 0;
+  }
+}
+
+.image {
+  @include image-cover;
+}
+
+.description {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  translate: -50% 0;
+
+  width: 100%;
+  max-width: 294px;
+
+  color: var(--white, #fff);
+  text-align: justify;
+  font-size: 1.125rem;
+  line-height: 1.277;
+  letter-spacing: 0.01em;
+
+  @include desktop-lg {
+    position: static;
+    translate: 0px 0px;
+  }
+}
