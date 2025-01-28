@@ -1,0 +1,132 @@
+@import '@/styles/mixins';
+@import '@/styles/variables';
+
+$frame-width: 392px;
+$frame-height: 392px;
+$gap-top: 182px;
+
+.section {
+  padding-top: 90px;
+  padding-bottom: 18px;
+
+  &::after {
+    content: '';
+    @include square(100%);
+    @include bg-cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    display: block;
+
+    background-image: url('../../../assets/images/about/story/story-content.jpg');
+  }
+
+  @include desktop-lg {
+    padding-top: $gap-top;
+
+    &::after {
+      width: calc(100% - 608px);
+      max-width: 1370px;
+
+      clip-path: polygon(
+        100% $gap-top,
+        100% 0,
+        0 0,
+        0 100%,
+        100% 100%,
+        100% calc($gap-top + $frame-height),
+        calc(100% - $frame-width) calc($gap-top + $frame-height),
+        calc(100% - $frame-width) $gap-top
+      );
+    }
+  }
+}
+
+.container {
+  padding-inline: 16px;
+
+  @include desktop-lg {
+    padding-inline: 48px;
+  }
+}
+
+.wrapper {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  height: 100%;
+
+  @include desktop-lg {
+    align-items: flex-start;
+  }
+}
+
+.title {
+  max-width: 224px;
+
+  color: var(--white, #fff);
+  text-align: center;
+  font-family: $font-cormorant-unicase;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+
+  @include desktop-lg {
+    max-width: none;
+
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+}
+
+.description {
+  margin-top: auto;
+
+  color: var(--white, #fff);
+  font-size: 1rem;
+  letter-spacing: -0.03em;
+
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  @include desktop-lg {
+    margin-left: calc((100% - 608px) - $frame-width + 48px);
+    margin-right: auto;
+    margin-top: 0;
+    padding-block: 67px;
+    padding-left: 50px;
+    max-width: 900px;
+    width: 100%;
+
+    text-align: justify;
+    flex-wrap: wrap;
+    gap: 4px 32px;
+
+    max-height: 300px;
+
+    & > span {
+      max-width: 432px;
+    }
+  }
+}
+
+.label {
+  margin-top: auto;
+  align-self: flex-start;
+
+  color: var(--white, #fff);
+  font-size: 1.125rem;
+  letter-spacing: -0.01em;
+
+  @include desktop-lg {
+    bottom: 0;
+    left: 0;
+  }
+}

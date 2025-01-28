@@ -1,5 +1,6 @@
 .container {
   margin-inline: auto;
-  width: min(100%, 1920px);
+  width: 100%;
+  max-width: 1920px;
   height: 100%;
 }

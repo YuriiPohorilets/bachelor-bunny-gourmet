@@ -2,79 +2,25 @@
 @import '@/styles/variables';
 
 .section {
-  padding-top: 160px;
-  padding-bottom: 95px;
+  padding-top: 112px;
+  padding-bottom: 50px;
 
   height: fit-content;
 
   @include desktop-xxl {
-    padding-top: 400px;
-    padding-bottom: 240px;
+    padding-top: 214px;
+    padding-bottom: 120px;
   }
 }
 
 .wrapper {
   display: flex;
   flex-direction: column;
-  align-items: center;
-
-  gap: 150px;
 
   height: 100%;
-
-  @include desktop-lg {
-    gap: 420px;
-  }
 }
 
-.quoteWrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-}
-
-.logo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.icon {
-  width: 66px;
-}
-
-.label {
-  color: var(--white, #ffffff);
-  font-family: $font-cormorant-unicase;
-  font-size: 4.3125rem;
-  font-weight: 500;
-  line-height: 100%;
-  letter-spacing: -0.05em;
-  text-transform: uppercase;
-}
-
-.quote {
-  max-width: 312px;
-  text-transform: uppercase;
-
-  color: var(--white, #fff);
-
-  @include tablet {
-    max-width: 500px;
-  }
-
-  @include desktop-lg {
-    max-width: 1227px;
-
-    font-size: 2.75rem;
-    line-height: 3.125rem;
-    line-height: calc(50 / 44);
-    letter-spacing: -0.02em;
-    white-space: pre-line;
-  }
-}
-
-.clients {
+.menu {
   position: relative;
 
   display: flex;
@@ -195,7 +141,7 @@
   letter-spacing: -0.01em;
 }
 
-.comment {
+.description {
   color: var(--white, #fff);
   font-size: 1.125rem;
   letter-spacing: -0.01em;
