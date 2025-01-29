@@ -62,7 +62,7 @@ html.lenis body {
 
 .bgWrapper.home {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%),
-    url('../assets/images/home/footer-bg.jpg');
+    url('../assets/images/home/footer_bg.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -70,7 +70,15 @@ html.lenis body {
 
 .bgWrapper.about {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%),
-    url('../assets/images/about/footer-bg.jpg');
+    url('../assets/images/about/footer_bg.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.bgWrapper.grabAndGo {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%),
+    url('../assets/images/grab-and-go/footer_bg.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;

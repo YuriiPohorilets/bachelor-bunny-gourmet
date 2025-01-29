@@ -1,4 +1,4 @@
-import TeamImage from '@/assets/images/about/team/team.jpg';
+import TeamImage from '@/assets/images/about/team.jpg';
 
 export interface IOurTeamInteractor {
   content: {

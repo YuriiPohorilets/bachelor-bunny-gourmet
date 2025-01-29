@@ -1,5 +1,5 @@
-import Content1Img from '@/assets/images/home/grab-and-go/content-1.jpg';
-import Content2Img from '@/assets/images/home/grab-and-go/content-2.jpg';
+import Content1Img from '@/assets/images/home/grab-and-go_content-1.jpg';
+import Content2Img from '@/assets/images/home/grab-and-go_content-2.jpg';
 import { useMediaQuery } from '@/hooks/useMediaQuery';
 import { MediaQuery } from '@/types';
 

@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { useMediaQuery } from '@/hooks/useMediaQuery';
 import { MediaQuery } from '@/types';
-import Image from '@/assets/images/home/about/about-content.png';
+import Image from '@/assets/images/home/about_content.png';
 
 export interface IAboutInteractor {
   matches: { isDesktop: boolean; isTablet: boolean };

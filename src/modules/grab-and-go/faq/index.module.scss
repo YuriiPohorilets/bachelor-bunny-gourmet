@@ -1,0 +1,79 @@
+@import '@/styles/mixins';
+@import '@/styles/variables';
+
+.section {
+  padding-top: 48px;
+  padding-bottom: 500px;
+  height: fit-content;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+
+    width: 100%;
+    height: 254px;
+
+    background: linear-gradient(179deg, #000 8.72%, rgba(0, 0, 0, 0) 78.92%);
+  }
+
+  @include desktop-lg {
+    padding-top: 200px;
+    padding-bottom: 280px;
+  }
+}
+
+.container {
+  padding-inline: 18px;
+
+  @include desktop-lg {
+    padding-inline: 64px;
+  }
+}
+
+.wrapper {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 310px;
+
+  width: 100%;
+  height: 100%;
+}
+
+.quote {
+  text-transform: uppercase;
+  max-width: 1222px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+
+  max-width: 1222px;
+
+  @include desktop-lg {
+    gap: 90px;
+  }
+}
+
+.title {
+  color: var(--white, #fff);
+  text-align: center;
+  font-family: $font-cormorant-unicase;
+  font-size: 1.875rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+
+  @include desktop-lg {
+    font-size: 3.75rem;
+    font-weight: 700;
+  }
+}

@@ -1,9 +1,9 @@
 import { useRef, useState } from 'react';
 import Swiper from 'swiper';
 
-import Slide1Img from '@/assets/images/home/services/slide-1.jpg';
-import Slide2Img from '@/assets/images/home/services/slide-2.jpg';
-import Slide3Img from '@/assets/images/home/services/slide-3.jpg';
+import Slide1Img from '@/assets/images/home/services_slide-1.jpg';
+import Slide2Img from '@/assets/images/home/services_slide-2.jpg';
+import Slide3Img from '@/assets/images/home/services_slide-3.jpg';
 import { useMediaQuery } from '@/hooks/useMediaQuery';
 import { MediaQuery } from '@/types';
 

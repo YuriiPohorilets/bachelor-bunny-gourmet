@@ -1,5 +1,5 @@
-import Slide1Img from '@/assets/images/home/hero/slide-1.jpg';
-import Slide2Img from '@/assets/images/home/hero/slide-2.jpg';
+import Slide1Img from '@/assets/images/home/hero_slide-1.jpg';
+import Slide2Img from '@/assets/images/home/hero_slide-2.jpg';
 
 export interface IHeroInteractor {
   content: {

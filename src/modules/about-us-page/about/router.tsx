@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { IAboutInteractor } from './interactor';
 import { Container, Section } from '@/components/layout';
 import { Quote } from '@/components/common';
-import Photo from '@/assets/images/about/about/photo.jpg';
+import Photo from '@/assets/images/about/photo.jpg';
 import styles from './index.module.scss';
 
 export interface IProps {

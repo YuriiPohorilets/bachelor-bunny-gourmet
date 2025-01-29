@@ -1,7 +1,7 @@
 import { useMediaQuery } from '@/hooks/useMediaQuery';
 import { MediaQuery } from '@/types';
-import SlideImg1 from '@/assets/images/home/delivery-service/slide-1.jpg';
-import SlideImg2 from '@/assets/images/home/delivery-service/slide-2.jpg';
+import SlideImg1 from '@/assets/images/home/delivery_slide-1.jpg';
+import SlideImg2 from '@/assets/images/home/delivery_slide-2.jpg';
 
 export interface IDeliveryServiceInteractor {
   matches: { isDesktop: boolean };
