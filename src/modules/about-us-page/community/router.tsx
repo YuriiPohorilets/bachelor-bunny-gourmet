@@ -1,7 +1,7 @@
 import { ICommunityInteractor } from './interactor';
+import styles from './index.module.scss';
 import { Container, Section } from '@/components/layout';
 import { Button } from '@/components/ui';
-import styles from './index.module.scss';
 
 export interface IProps {
   interactor: ICommunityInteractor;

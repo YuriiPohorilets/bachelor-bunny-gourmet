@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { About, Hero, Menu, OurTeam, Story } from '@/modules/about-us-page';
+import { About, Community, Hero, Menu, OurTeam, Story } from '@/modules/about-us-page';
 import { Footer } from '@/modules/footer';
 
 const AboutUsPage = () => {
@@ -22,6 +22,7 @@ const AboutUsPage = () => {
 
       <div className="about bgWrapper">
         <Menu />
+        <Community />
         <Footer />
       </div>
     </>
