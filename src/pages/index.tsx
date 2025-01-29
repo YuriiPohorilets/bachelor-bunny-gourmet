@@ -10,8 +10,13 @@ import {
   Community,
 } from '@/modules/home-page';
 import { Footer } from '@/modules/footer';
+import { BgWrapper } from '@/components/common';
+import FooterImage from '@/assets/images/home/footer_bg.jpg';
 
 const HomePage = () => {
+  const footerBg = `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%),
+    url('${FooterImage.src}')`;
+
   return (
     <>
       <Head>
@@ -31,10 +36,11 @@ const HomePage = () => {
       <DeliveryService />
       <Events />
       <OurClients />
-      <div className="home bgWrapper">
+
+      <BgWrapper background={footerBg}>
         <Community />
         <Footer />
-      </div>
+      </BgWrapper>
     </>
   );
 };

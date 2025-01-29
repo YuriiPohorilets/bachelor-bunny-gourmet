@@ -1,6 +1,8 @@
 import Head from 'next/head';
 import { About, Community, Hero, Menu, OurTeam, Story } from '@/modules/about-us-page';
 import { Footer } from '@/modules/footer';
+import { BgWrapper } from '@/components/common';
+import FooterImage from '@/assets/images/about/footer_bg.jpg';
 
 const AboutUsPage = () => {
   return (
@@ -20,11 +22,11 @@ const AboutUsPage = () => {
       <Story />
       <OurTeam />
 
-      <div className="about bgWrapper">
+      <BgWrapper background={`url('${FooterImage.src}')`}>
         <Menu />
         <Community />
         <Footer />
-      </div>
+      </BgWrapper>
     </>
   );
 };

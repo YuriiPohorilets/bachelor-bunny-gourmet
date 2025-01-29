@@ -1,8 +1,12 @@
 import Head from 'next/head';
 import { Footer } from '@/modules/footer';
 import { About, Faq, Hero, Menu } from '@/modules/grab-and-go';
+import { BgWrapper } from '@/components/common';
+import FooterImage from '@/assets/images/grab-and-go/footer_bg.jpg';
 
 const GrabAndGoPage = () => {
+  const footerBg = `linear-gradient(0deg, rgba(0, 0, 0, 0.50) 0%, rgba(0, 0, 0, 0.50) 100%), url('${FooterImage.src}')`;
+
   return (
     <>
       <Head>
@@ -19,10 +23,10 @@ const GrabAndGoPage = () => {
       <Menu />
       <About />
 
-      <div className="grabAndGo bgWrapper">
+      <BgWrapper background={footerBg}>
         <Faq />
         <Footer />
-      </div>
+      </BgWrapper>
     </>
   );
 };

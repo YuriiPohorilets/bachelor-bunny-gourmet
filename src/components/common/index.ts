@@ -6,6 +6,7 @@ export { ToTopButton } from './ToTopButton/ToTopButton';
 export { Quote } from './Quote/Quote';
 export { Social } from './Social/Social';
 export { Rating } from './Rating/Rating';
+export { BgWrapper } from './BgWrapper/BgWrapper';
 
 export { SwiperPagination } from './SwiperPagination/SwiperPagination';
 export { SwiperNavigationButton } from './SwiperNavigationButton/SwiperNavigationButton';
