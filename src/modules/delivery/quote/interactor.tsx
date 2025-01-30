@@ -1,16 +1,16 @@
 export interface IQuoteInteractor {
-  exampleMethod: () => Promise<void>
-  children: {
-    firstChild: boolean
-  }
+  content: {
+    title: string;
+    quote: string;
+  };
 }
 
 export const useQuoteInteractor = (): IQuoteInteractor => {
   return {
-    exampleMethod: async () => {
-    },
-    children: {
-      firstChild: true,
+    content: {
+      title: 'Quote',
+      quote:
+        'Include in culinary excellence with bunny belles: your experience, enhanced by signature cocktails',
     },
   };
 };

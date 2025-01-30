@@ -7,6 +7,9 @@ import HeroImage from '@/assets/images/delivery/hero_bg.jpg';
 import FooterImage from '@/assets/images/delivery/footer_bg.png';
 
 const DeliveryPage = () => {
+  const heroBg = `linear-gradient(0deg, rgba(0, 0, 0, 0.50) 0%, rgba(0, 0, 0, 0.50) 100%),
+    url('${HeroImage.src}')`;
+
   return (
     <>
       <Head>
@@ -19,7 +22,7 @@ const DeliveryPage = () => {
         <link rel="manifest" href="favicons/site.webmanifest" />
       </Head>
 
-      <BgWrapper background={`url('${HeroImage.src}')`}>
+      <BgWrapper background={heroBg}>
         <Hero />
         <Quote />
       </BgWrapper>
