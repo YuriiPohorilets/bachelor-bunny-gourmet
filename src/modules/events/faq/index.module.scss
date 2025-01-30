@@ -1,0 +1,44 @@
+@import '@/styles/mixins';
+@import '@/styles/variables';
+
+.section {
+  padding-top: 170px;
+  padding-bottom: 320px;
+  height: fit-content;
+
+  @include desktop-lg {
+    padding-top: 160px;
+    padding-bottom: 230px;
+  }
+}
+
+.container {
+  padding-inline: 18px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+
+  margin-inline: auto;
+  max-width: 1222px;
+
+  @include desktop-lg {
+    gap: 90px;
+  }
+}
+
+.title {
+  color: var(--white, #fff);
+  text-align: center;
+  font-family: $font-cormorant-unicase;
+  font-size: 1.875rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+
+  @include desktop-lg {
+    font-size: 3.75rem;
+  }
+}
