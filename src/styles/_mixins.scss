@@ -1,0 +1,105 @@
+@mixin tablet {
+  @media (min-width: #{$screen-tablet}) {
+    @content;
+  }
+}
+
+@mixin desktop-lg {
+  @media (min-width: #{$screen-desktop-lg}) {
+    @content;
+  }
+}
+
+@mixin desktop-xl {
+  @media (min-width: #{$screen-desktop-xl}) {
+    @content;
+  }
+}
+
+@mixin desktop-xxl {
+  @media (min-width: #{$screen-desktop-xxl}) {
+    @content;
+  }
+}
+
+@mixin flex-center($gap: 0) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @if $gap != 0 {
+    gap: $gap;
+  }
+}
+
+@mixin position-center($position: absolute, $zIndex: 0) {
+  position: $position;
+  top: 50%;
+  left: 50%;
+  z-index: $zIndex;
+  translate: -50% -50%;
+}
+
+@mixin square($size, $radius: 0) {
+  width: $size;
+  height: $size;
+
+  @if $radius != 0 {
+    border-radius: $radius;
+  }
+}
+
+@mixin button {
+  cursor: pointer;
+
+  transition: color $duration-sm $easing-common, border-color $duration-sm $easing-common,
+    background-color $duration-sm $easing-common;
+
+  &:is(:disabled) {
+    cursor: not-allowed;
+  }
+}
+
+@mixin hover-focus {
+  &:is(:hover, :focus-visible) {
+    @content;
+  }
+}
+
+@mixin disabled {
+  &:is(:disabled) {
+    @content;
+  }
+}
+
+@mixin image-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+@mixin bg-cover {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@mixin text-overflow {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+
+  min-width: 0px;
+}
+
+@function clamp-calc($min-width, $max-width, $size-at-min-width, $size-at-max-width) {
+  $slope: ($size-at-max-width - $size-at-min-width) / ($max-width - $min-width);
+  $y-axis-intersection: -1 * $min-width * $slope + $size-at-min-width;
+  $return-value: clamp(
+    #{$size-at-min-width},
+    #{$y-axis-intersection} + #{$slope} * 100vw,
+    #{$size-at-max-width}
+  );
+  @return $return-value;
+}

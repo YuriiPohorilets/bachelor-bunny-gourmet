@@ -1,0 +1,153 @@
+@import '@/styles/mixins';
+@import '@/styles/variables';
+
+.section {
+  @include bg-cover;
+  padding-top: 148px;
+  padding-bottom: 40px;
+
+  background-color: #c7c7c7;
+  background-image: url('../../../assets/images/home/about_bg.jpg');
+
+  &::before,
+  &::after {
+    position: absolute;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 326px;
+  }
+
+  &::before {
+    content: '';
+    top: 0;
+    background: linear-gradient(180deg, #000 0%, rgba(0, 0, 0, 0) 100%);
+  }
+
+  &::after {
+    content: '';
+    bottom: 0;
+    background: linear-gradient(0deg, #000 0%, rgba(0, 0, 0, 0) 100%);
+  }
+
+  @include tablet {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+}
+
+.container {
+  @include desktop-lg {
+    padding-inline: 48px;
+  }
+}
+
+.wrapper {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 36px;
+
+  height: 100%;
+
+  @include tablet {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+
+  @include desktop-lg {
+    gap: 90px;
+    justify-content: center;
+  }
+}
+
+.content {
+  padding-inline: 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 80px;
+
+  @include tablet {
+    padding-inline: 32px;
+    width: min(100%, 800px);
+    min-width: 460px;
+  }
+}
+
+.qoute {
+  max-width: 360px;
+  text-transform: uppercase;
+
+  @include tablet {
+    max-width: 650px;
+  }
+}
+
+.descriptionWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.description {
+  max-width: 360px;
+
+  color: var(--white, #fff);
+  font-size: 1rem;
+  letter-spacing: -0.03em;
+
+  @include tablet {
+    max-width: 668px;
+    font-size: 1.125rem;
+  }
+}
+
+.readMoreButton {
+  @include button;
+  @include flex-center;
+  margin-top: 16px;
+  align-self: flex-end;
+
+  padding-block: 10px;
+  padding-inline: 10px;
+
+  color: var(--white, #fff);
+  font-family: $font-gotham-pro;
+  font-size: 18px;
+  text-decoration: underline;
+  text-underline-position: from-font;
+  text-decoration-thickness: 0;
+
+  background-color: transparent;
+  border: none;
+
+  @include hover-focus {
+    color: var(--golden, #be8900);
+  }
+}
+
+.imageWrapper {
+  flex-shrink: 0;
+
+  width: min(100%, 425px);
+
+  aspect-ratio: 1 / 1;
+
+  translate: -40% 0;
+
+  @include tablet {
+    translate: 0 0;
+  }
+
+  @include desktop-lg {
+    width: min(100%, 546px);
+  }
+}
+
+.imageWrapper > img {
+  @include image-cover;
+}

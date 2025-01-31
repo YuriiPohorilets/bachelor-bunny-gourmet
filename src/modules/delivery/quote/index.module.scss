@@ -1,0 +1,42 @@
+@import '@/styles/mixins';
+@import '@/styles/variables';
+
+.section {
+  padding-top: 420px;
+  padding-bottom: 74px;
+
+  @include desktop-lg {
+    padding-bottom: 286px;
+  }
+}
+
+.container {
+  padding-inline: 42px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+
+  height: 100%;
+}
+
+.quote {
+  max-width: 528px;
+
+  color: var(--white, #fff);
+  font-family: $font-gotham-pro;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+
+  @include desktop-lg {
+    max-width: 1222px;
+
+    color: var(--light-grey, #c0c0c0);
+    font-size: 2.74rem;
+    line-height: 1.136;
+    letter-spacing: -0.02em;
+  }
+}

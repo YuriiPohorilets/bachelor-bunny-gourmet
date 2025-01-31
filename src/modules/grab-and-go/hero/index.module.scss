@@ -1,0 +1,187 @@
+@import '@/styles/mixins';
+@import '@/styles/variables';
+
+$frame-width: 780px;
+$frame-height: 370px;
+
+.section {
+  padding-top: 160px;
+  padding-bottom: 32px;
+
+  @include desktop-lg {
+    padding-top: 120px;
+    padding-bottom: 100px;
+  }
+}
+
+.container {
+  padding-inline: 26px;
+
+  @include desktop-lg {
+    padding-inline: 48px;
+  }
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+
+  height: 100%;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 64px;
+
+  width: 100%;
+}
+
+.title {
+  color: var(--white, #fff);
+  font-family: $font-cormorant-unicase;
+  font-size: 3.125rem;
+  font-weight: 700;
+
+  @include desktop-lg {
+    margin-top: auto;
+
+    text-align: center;
+    font-size: 9.375rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+}
+
+.descriptionWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  max-width: 520px;
+
+  @include desktop-lg {
+    position: relative;
+
+    align-self: flex-end;
+
+    margin-top: auto;
+    margin-right: 140px;
+  }
+}
+
+.description {
+  color: var(--white, #fff);
+  text-align: justify;
+  font-size: 1.125rem;
+  line-height: 1.277;
+  letter-spacing: -0.03em;
+}
+
+.labelWrapper {
+  position: absolute;
+  top: 100px;
+  right: 0;
+  z-index: 3;
+
+  translate: -24px 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  &::after {
+    content: '';
+    display: block;
+
+    margin-left: 50%;
+    width: 100%;
+    height: 1px;
+    background-color: var(--golden, #be8900);
+  }
+
+  @include desktop-lg {
+    top: -32px;
+    right: auto;
+    left: 64px;
+
+    translate: -100% 0;
+
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
+
+    &::after {
+      margin-left: 0;
+      width: 280px;
+    }
+  }
+}
+
+.label {
+  color: var(--white, #fff);
+  font-family: $font-gotham-pro;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  text-wrap: nowrap;
+
+  @include desktop-lg {
+    font-size: 1.375rem;
+    letter-spacing: 0.06em;
+  }
+}
+
+.sliderWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+
+  width: 100%;
+  height: 100%;
+
+  @include desktop-lg {
+    clip-path: polygon(
+      calc(100% - ($frame-width + 46px)) 100%,
+      0 100%,
+      0 0,
+      100% 0,
+      100% 100%,
+      calc(100% - 46px) 100%,
+      calc(100% - 46px) calc(100% - $frame-height),
+      calc(100% - ($frame-width + 46px)) calc(100% - $frame-height)
+    );
+  }
+
+  @include desktop-xxl {
+    clip-path: polygon(
+      calc(((100% - 1920px) / 2) + 1920px - ($frame-width + 46px)) 100%,
+      0 100%,
+      0 0,
+      100% 0,
+      100% 100%,
+      calc(((100% - 1920px) / 2) + 1920px - 46px) 100%,
+      calc(((100% - 1920px) / 2) + 1920px - 46px) calc(100% - $frame-height),
+      calc(((100% - 1920px) / 2) + 1920px - ($frame-width + 46px)) calc(100% - $frame-height)
+    );
+  }
+}
+
+.pagination {
+  display: none;
+
+  @include desktop-lg {
+    position: absolute;
+    bottom: 194px;
+    left: 60px;
+    z-index: 1;
+
+    display: flex;
+  }
+
+  @include desktop-xxl {
+    left: calc((100% - 1920px) / 2 + 60px);
+  }
+}

@@ -1,0 +1,141 @@
+@import '@/styles/mixins';
+@import '@/styles/variables';
+
+.section {
+  padding-top: 160px;
+  padding-bottom: 155px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+
+    width: 100%;
+    height: 440px;
+
+    background: linear-gradient(180deg, #000 0%, rgba(0, 0, 0, 0) 71%);
+  }
+
+  @include desktop-lg {
+    padding-bottom: 100px;
+  }
+}
+
+.container {
+  padding-inline: 28px;
+
+  @include desktop-lg {
+    padding-inline: 180px;
+  }
+}
+
+.wrapper {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 100px;
+
+  height: 100%;
+
+  @include desktop-lg {
+    gap: 32px;
+  }
+}
+
+.titleWrapper {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 90px;
+
+  @include desktop-lg {
+    flex-direction: column;
+    gap: 60px;
+
+    margin-top: auto;
+  }
+}
+
+.title {
+  color: var(--white, #fff);
+  font-family: $font-cormorant-unicase;
+  font-size: 3.125rem;
+  font-weight: 700;
+  line-height: 0.96;
+
+  @include desktop-lg {
+    max-width: 1280px;
+
+    text-align: center;
+    font-size: 7.25rem;
+    line-height: 0.8;
+    letter-spacing: -0.01em;
+  }
+
+  @include desktop-xxl {
+    font-size: 9.375rem;
+  }
+}
+
+.label {
+  position: relative;
+
+  align-self: flex-end;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  color: var(--white, #fff);
+  font-family: $font-gotham-pro;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+
+  &::after {
+    content: '';
+    display: block;
+
+    margin-left: 50%;
+    width: 100%;
+    height: 1px;
+    background-color: var(--golden, #be8900);
+  }
+
+  @include desktop-lg {
+    align-self: center;
+
+    &::after {
+      display: none;
+    }
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  max-width: 528px;
+
+  @include desktop-lg {
+    align-self: flex-end;
+    margin-top: auto;
+  }
+}
+
+.description {
+  font-size: 1rem;
+  letter-spacing: -0.03em;
+
+  @include desktop-lg {
+    color: var(--white, #fff);
+    text-align: justify;
+    font-size: 1.125rem;
+    line-height: 1.277;
+    letter-spacing: -0.01em;
+  }
+}

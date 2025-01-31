@@ -1,0 +1,42 @@
+@import '@/styles/mixins';
+@import '@/styles/variables';
+
+.container {
+  padding-left: 18px;
+
+  @include tablet {
+    padding-left: 36px;
+  }
+
+  @include desktop-lg {
+    padding-inline: 60px;
+  }
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 39px;
+
+  width: min(100%, 900px);
+  margin-inline: auto;
+
+  @include desktop-lg {
+    gap: 80px;
+    width: min(100%, 1220px);
+  }
+}
+
+.title {
+  color: var(--white, #ffffff);
+  text-align: center;
+  font-family: $font-cormorant-unicase;
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+
+  @include desktop-lg {
+    font-size: 60px;
+  }
+}

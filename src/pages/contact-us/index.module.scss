@@ -1,0 +1,34 @@
+@import '@/styles/mixins';
+@import '@/styles/variables';
+
+.wrapper {
+  position: relative;
+
+  padding-top: 160px;
+  padding-bottom: 32px;
+  width: 100%;
+  height: 100dvh;
+  min-height: 768px;
+
+  overflow: hidden;
+
+  @include desktop-lg {
+    padding-block: 160px;
+  }
+}
+
+.container {
+  padding-inline: 32px;
+
+  @include desktop-lg {
+    padding-inline: 64px;
+  }
+}
+
+.innerWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  height: 100%;
+}

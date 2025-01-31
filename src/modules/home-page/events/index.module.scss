@@ -1,0 +1,116 @@
+@import '@/styles/mixins';
+@import '@/styles/variables';
+
+$frame-width: 780px;
+$frame-height: 370px;
+
+.section {
+  padding-top: 50px;
+  padding-bottom: 230px;
+
+  @include desktop-lg {
+    padding-bottom: 60px;
+  }
+
+  &::after {
+    content: '';
+    @include square(100%);
+    @include bg-cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    display: block;
+
+    background-image: url('../../../assets/images/home/events_bg.jpg');
+
+    @include desktop-lg {
+      clip-path: polygon(
+        calc(100% - ($frame-width + 46px)) 100%,
+        0 100%,
+        0 0,
+        100% 0,
+        100% 100%,
+        calc(100% - 46px) 100%,
+        calc(100% - 46px) calc(100% - $frame-height),
+        calc(100% - ($frame-width + 46px)) calc(100% - $frame-height)
+      );
+    }
+  }
+}
+
+.container {
+  padding-inline: 24px;
+
+  @include desktop-lg {
+    padding-inline: 48px;
+  }
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+
+  height: 100%;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 24px;
+
+  width: min(100%, 500px);
+  height: 100%;
+
+  @include desktop-lg {
+    position: absolute;
+    bottom: 0;
+    right: 46px;
+
+    align-items: flex-end;
+    justify-content: flex-end;
+
+    padding-left: 103px;
+    padding-right: 176px;
+    padding-block: 62px;
+    width: min(100%, $frame-width);
+    height: fit-content;
+  }
+}
+
+.title {
+  color: var(--white, #fff);
+  font-family: $font-cormorant-unicase;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1em;
+}
+
+.description {
+  color: var(--white, #fff);
+  font-size: 1.125rem;
+  line-height: calc(23 / 18);
+}
+
+.descriptionWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  margin-block: auto;
+
+  @include desktop-lg {
+    margin-block: 0;
+  }
+}
+
+.link {
+  align-self: flex-end;
+
+  @include desktop-lg {
+    align-self: auto;
+  }
+}

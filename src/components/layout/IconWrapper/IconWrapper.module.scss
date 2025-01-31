@@ -1,0 +1,12 @@
+@import '@/styles/mixins';
+@import '@/styles/variables';
+
+.iconWrapper {
+  @include flex-center;
+  flex-shrink: 0;
+  color: currentColor;
+
+  & > svg {
+    @include square(100%);
+  }
+}

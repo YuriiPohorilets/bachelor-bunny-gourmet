@@ -1,0 +1,120 @@
+@import '@/styles/mixins';
+@import '@/styles/variables';
+
+.item {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+
+  @include desktop-lg {
+    align-items: center;
+    flex-direction: row;
+  }
+}
+
+.link {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding-block: 10px;
+  padding-inline: 10px;
+
+  color: var(--white, #ffffff);
+  font-family: $font-gotham-pro;
+  font-size: 30px;
+  text-transform: uppercase;
+  line-height: normal;
+
+  transition: color $duration-sm $easing-common;
+  cursor: pointer;
+
+  @include desktop-lg {
+    font-size: 18px;
+  }
+
+  @include hover-focus {
+    color: var(--golden, #be8900);
+  }
+
+  &.active {
+    color: var(--golden, #be8900);
+  }
+}
+
+.link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 10px;
+
+  display: block;
+  width: calc(100% - 20px);
+  height: 1px;
+
+  background-color: currentColor;
+  transition: scale $duration-sm $easing-common;
+
+  scale: 0 1;
+  transform-origin: left;
+}
+
+.link:is(:hover, :focus)::after,
+.link.active::after {
+  scale: 1 1;
+}
+
+.item:has(.list:has(.link.active)) > .link {
+  color: var(--golden, #be8900);
+
+  scale: 1 1;
+}
+
+.iconWrapper {
+  @include square(16px);
+
+  color: currentColor;
+  rotate: 180deg;
+
+  transition: rotate $duration-sm $easing-common;
+
+  @include desktop-lg {
+    @include square(8px);
+  }
+
+  &.open {
+    rotate: 0deg;
+  }
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+
+  padding-left: 40px;
+
+  width: 100%;
+
+  @include desktop-lg {
+    position: absolute;
+    bottom: -12px;
+    left: 0;
+    translate: 0 100%;
+
+    gap: 2px;
+
+    padding-left: 0px;
+    width: 300px;
+  }
+}
+
+.list > .item > .link {
+  text-transform: initial;
+  font-size: 20px;
+}

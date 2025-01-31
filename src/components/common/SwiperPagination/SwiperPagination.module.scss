@@ -1,0 +1,8 @@
+@import '@/styles/mixins';
+@import '@/styles/variables';
+
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}

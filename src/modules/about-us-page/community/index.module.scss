@@ -1,0 +1,78 @@
+@import '@/styles/mixins';
+@import '@/styles/variables';
+
+.section {
+  padding-top: 106px;
+  padding-bottom: 86px;
+  height: fit-content;
+
+  @include desktop-lg {
+    padding-block: 124px;
+  }
+}
+
+.container {
+  padding-inline: 32px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  height: 100%;
+
+  @include desktop-lg {
+    justify-content: center;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  gap: 64px;
+
+  max-width: 450px;
+
+  @include desktop-lg {
+    flex-direction: column;
+  }
+}
+
+.titleWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 42px;
+
+  @include desktop-lg {
+    gap: 36px;
+  }
+}
+
+.title {
+  color: var(--white, #fff);
+  text-align: center;
+  font-family: $font-cormorant-unicase;
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  text-transform: capitalize;
+
+  @include desktop-lg {
+    font-size: 3.375rem;
+
+    line-height: 0.83;
+  }
+}
+
+.description {
+  color: var(--white, #fff);
+  text-align: justify;
+  font-family: $font-century-gothic;
+  font-size: 1.125rem;
+  line-height: 1.1277;
+  letter-spacing: -0.02em;
+}

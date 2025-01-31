@@ -1,0 +1,182 @@
+import { useRef } from 'react';
+import Swiper from 'swiper';
+
+import { useMediaQuery } from '@/hooks/useMediaQuery';
+import { MediaQuery } from '@/types';
+import SlidePlaceholderImg from '@/assets/images/home/client-placeholder.jpg';
+
+export interface IMenuInteractor {
+  swiperRef: React.MutableRefObject<Swiper | null>;
+  handlePrevSlide: () => void;
+  handleNextSlide: () => void;
+
+  matches: { isDesktop: boolean };
+  content: { title: string };
+  slides: {
+    id: string;
+    name: string;
+    image: string;
+    description: string;
+  }[];
+}
+
+export const useMenuInteractor = (): IMenuInteractor => {
+  const isDesktop = useMediaQuery(MediaQuery.Desktop);
+  const swiperRef = useRef<Swiper | null>(null);
+
+  const handlePrevSlide = () => swiperRef.current?.slidePrev();
+  const handleNextSlide = () => swiperRef.current?.slideNext();
+
+  return {
+    swiperRef,
+    handlePrevSlide,
+    handleNextSlide,
+
+    matches: { isDesktop },
+
+    content: { title: 'Our menu' },
+
+    slides: [
+      {
+        id: '1',
+        name: 'Alice Johnson',
+        image: SlidePlaceholderImg.src,
+        description:
+          'The service was fantastic! Everything was handled smoothly and exceeded my expectations.The service was fantastic! Everything was handled smoothly and exceeded my expectations.The service was fantastic! Everything was handled smoothly and exceeded my expectations.The service was fantastic! Everything was handled smoothly and exceeded my expectations.The service was fantastic! Everything was handled smoothly and exceeded my expectations.The service was fantastic! Everything was handled smoothly and exceeded my expectations.The service was fantastic! Everything was handled smoothly and exceeded my expectations.The service was fantastic! Everything was handled smoothly and exceeded my expectations.',
+      },
+      {
+        id: '2',
+        name: 'Bob Smith',
+        image: SlidePlaceholderImg.src,
+        description:
+          'Overall, it was a good experience. There were a few minor delays, but the team handled them well.',
+      },
+      {
+        id: '3',
+        name: 'Charlie Brown',
+        image: SlidePlaceholderImg.src,
+        description:
+          'An average experience. Some aspects were good, while others could use significant improvement.',
+      },
+      {
+        id: '4',
+        name: 'Diana Prince',
+        image: SlidePlaceholderImg.src,
+        description:
+          'Absolutely fantastic! I was thoroughly impressed by the level of professionalism and attention to detail.',
+      },
+      {
+        id: '5',
+        name: 'Ethan Hunt',
+        image: SlidePlaceholderImg.src,
+        description:
+          'The service was below my expectations. Communication could have been better, and there were unnecessary delays.',
+      },
+      {
+        id: '6',
+        name: 'Fiona Gallagher',
+        image: SlidePlaceholderImg.src,
+        description:
+          'Extremely disappointing experience. The team was unresponsive, and the service was far from satisfactory.',
+      },
+      {
+        id: '7',
+        name: 'George Lopez',
+        image: SlidePlaceholderImg.src,
+        description:
+          'Good service overall, and the pricing was fair. I would recommend it to friends, but there’s room for improvement.',
+      },
+      {
+        id: '8',
+        name: 'Hannah Baker',
+        image: SlidePlaceholderImg.src,
+        description:
+          'Excellent experience! Everything was seamless, and I couldn’t have asked for better service.',
+      },
+      {
+        id: '9',
+        name: 'Ian Wright',
+        image: SlidePlaceholderImg.src,
+        description:
+          'The service was okay. I liked some parts, but other aspects didn’t meet my expectations.',
+      },
+      {
+        id: '10',
+        name: 'Jack Daniels',
+        image: SlidePlaceholderImg.src,
+        description:
+          'No comments provided. It seems the user didn’t have a strong opinion about the service, either positive or negative.',
+      },
+      {
+        id: '11',
+        name: 'Karen Walker',
+        image: SlidePlaceholderImg.src,
+        description:
+          'An outstanding experience from start to finish! The team went above and beyond to ensure everything was perfect.',
+      },
+      {
+        id: '12',
+        name: 'Leo Messi',
+        image: SlidePlaceholderImg.src,
+        description:
+          'Very good service, but there were a couple of hiccups along the way that kept it from being perfect.',
+      },
+      {
+        id: '13',
+        name: 'Mia Wallace',
+        image: SlidePlaceholderImg.src,
+        description:
+          'It was fine. I didn’t encounter any major issues, but it didn’t leave a lasting impression either.',
+      },
+      {
+        id: '14',
+        name: 'Nathan Drake',
+        image: SlidePlaceholderImg.src,
+        description:
+          'Subpar experience. The service didn’t match the promises made, and I was left quite dissatisfied.',
+      },
+      {
+        id: '15',
+        name: 'Olivia Pope',
+        image: SlidePlaceholderImg.src,
+        description:
+          'Truly an exceptional service! The staff was friendly, attentive, and ensured every detail was taken care of.',
+      },
+      {
+        id: '16',
+        name: 'Patrick Star',
+        image: SlidePlaceholderImg.src,
+        description:
+          'Terrible experience. Nothing was handled properly, and I felt completely let down by the service provided.',
+      },
+      {
+        id: '17',
+        name: 'Quincy Adams',
+        image: SlidePlaceholderImg.src,
+        description:
+          'No comments provided. It’s unclear what the user’s experience was like, as they didn’t leave feedback.',
+      },
+      {
+        id: '18',
+        name: 'Rachel Green',
+        image: SlidePlaceholderImg.src,
+        description:
+          'I enjoyed the experience overall. There were a couple of minor issues, but they were resolved quickly.',
+      },
+      {
+        id: '19',
+        name: 'Steve Rogers',
+        image: SlidePlaceholderImg.src,
+        description:
+          'Absolutely flawless! Everything went according to plan, and the entire process was incredibly smooth.',
+      },
+      {
+        id: '20',
+        name: 'Tina Fey',
+        image: SlidePlaceholderImg.src,
+        description:
+          'Not great. I expected much more given the high price, but unfortunately, the service didn’t deliver.',
+      },
+    ],
+  };
+};

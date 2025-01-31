@@ -1,0 +1,36 @@
+@import '@/styles/mixins';
+@import '@/styles/variables';
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  color: var(--white, #ffffff);
+
+  transition: color $duration-sm $easing-common;
+
+  @include hover-focus {
+    color: var(--golden, #be8900);
+  }
+}
+
+.iconWrapper {
+  width: 19px;
+  height: 14px;
+
+  @include desktop-lg {
+    width: 43px;
+    height: 34px;
+  }
+}
+
+.label {
+  color: currentColor;
+  font-family: $font-cormorant-unicase;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+}

@@ -1,0 +1,158 @@
+@import '@/styles/mixins';
+@import '@/styles/variables';
+
+.section {
+  padding-top: 112px;
+  padding-bottom: 50px;
+
+  height: fit-content;
+
+  @include desktop-xxl {
+    padding-top: 214px;
+    padding-bottom: 120px;
+  }
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+
+  height: 100%;
+}
+
+.menu {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  gap: 90px;
+
+  max-width: 100%;
+}
+
+.title {
+  color: var(--white, #fff);
+  text-align: center;
+  font-family: $font-cormorant-unicase;
+  font-size: 1.875rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+
+  &::after {
+    content: '';
+
+    display: none;
+    width: 200px;
+    height: 2px;
+
+    background-color: var(--golden, #be8900);
+  }
+
+  @include desktop-lg {
+    position: absolute;
+    top: 0;
+    left: 32px;
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+    gap: 26px;
+
+    color: var(--white, #fff);
+    text-align: center;
+    font-size: 2.375rem;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    font-family: $font-gotham-pro;
+
+    &::after {
+      display: block;
+    }
+  }
+}
+
+.sliderWrapper {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  user-select: none;
+
+  @include desktop-lg {
+    gap: 48px;
+  }
+}
+
+.slide {
+  width: 320px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+
+  @include tablet {
+    width: 434px;
+  }
+}
+
+.controlsWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-inline: auto;
+  width: min(100%, 320px);
+
+  @include desktop-lg {
+    width: 60%;
+
+    margin-inline: 0;
+    margin-left: auto;
+    padding-inline: 50px;
+  }
+}
+
+.thumb {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+
+  @include desktop-lg {
+    align-items: flex-start;
+  }
+}
+
+.nameWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.name {
+  @include text-overflow;
+  color: var(--white, #fff);
+  font-family: $font-century-gothic;
+  font-size: 1.125rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.description {
+  color: var(--white, #fff);
+  font-size: 1.125rem;
+  letter-spacing: -0.01em;
+  text-align: center;
+
+  max-height: 120px;
+
+  overflow-y: auto;
+
+  @include desktop-lg {
+    text-align: left;
+  }
+}
