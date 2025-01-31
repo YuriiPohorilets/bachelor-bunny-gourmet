@@ -8,7 +8,7 @@ const AboutUsPage = () => {
   return (
     <>
       <Head>
-        <title>About</title>
+        <title>About us</title>
         <link rel="icon" type="image/png" href="favicons/favicon-96x96.png" sizes="96x96" />
         <link rel="icon" type="image/svg+xml" href="favicons/favicon.svg" />
         <link rel="shortcut icon" href="favicons/favicon.ico" />
