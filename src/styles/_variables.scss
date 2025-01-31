@@ -5,10 +5,10 @@ $duration-lg: 600ms;
 
 $easing-common: ease-in-out;
 
-$font-gotham-pro: 'Gotham Pro', sans-serif;
-$font-century-gothic: 'Century Gothic', sans-serif;
-$font-adobe-garamond-pro: 'Adobe Garamond Pro', serif;
-$font-cormorant-unicase: 'Cormorant Unicase', serif;
+$font-gotham-pro: var(--font-gotham-pro);
+$font-century-gothic: var(--font-century-gothic);
+$font-adobe-garamond-pro: var(--font-adobe-garamond);
+$font-cormorant-unicase: var(--font-cormorant-unicase);
 
 $screen-mobile: 320px;
 $screen-tablet: 768px;
