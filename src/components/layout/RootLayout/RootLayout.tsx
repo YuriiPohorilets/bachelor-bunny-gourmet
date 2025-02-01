@@ -1,10 +1,11 @@
+import { useEffect, useState } from 'react';
+import { AnimatePresence, motion } from 'motion/react';
+import { usePathname } from 'next/navigation';
 import localFont from 'next/font/local';
 import { Cormorant_Unicase } from 'next/font/google';
 
-import { usePathname } from 'next/navigation';
-import { AnimatePresence, motion } from 'motion/react';
-
 import { Header, SmoothScroll } from '@/components/layout';
+import { Crown } from '@/components/common';
 
 interface IProps extends React.PropsWithChildren {}
 
@@ -44,32 +45,36 @@ export const cormorantUnicase = Cormorant_Unicase({
 
 export const RootLayout: React.FC<IProps> = ({ children }) => {
   const pathname = usePathname();
+  const [loading, setLoading] = useState(true);
 
-  const pageVariants = {
-    initial: { opacity: 0, x: -50 },
-    animate: { opacity: 1, x: 0 },
-    exit: { opacity: 0, x: 50 },
-  };
+  useEffect(() => {
+    setLoading(true);
+
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+  }, [pathname]);
 
   return (
     <div
       className={`${gothamPro.variable} ${centuryGothic.variable} ${adobeGaramond.variable} ${cormorantUnicase.variable}`}
     >
       <SmoothScroll>
-        <AnimatePresence mode="wait" initial={false}>
+        <AnimatePresence mode="wait">
           <motion.div
-            variants={pageVariants}
-            initial="initial"
-            animate="animate"
-            exit="exit"
-            transition={{ duration: 0.5 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1, ease: 'easeInOut' }}
             key={pathname}
           >
             <Header />
 
-            <motion.main>{children}</motion.main>
+            <main>{children}</main>
           </motion.div>
         </AnimatePresence>
+
+        <Crown animate={loading} />
       </SmoothScroll>
     </div>
   );
