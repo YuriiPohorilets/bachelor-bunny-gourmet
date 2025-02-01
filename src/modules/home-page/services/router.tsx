@@ -38,9 +38,15 @@ export const ServicesRouter: React.FC<IProps> = ({ interactor }) => {
         </Swiper>
       </div>
 
-      <div className={styles.labelWrapper}>
+      <motion.div
+        initial={{ opacity: 0, x: -30 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        exit={{ opacity: 0, x: 30 }}
+        transition={{ duration: 0.8, ease: 'easeInOut' }}
+        className={styles.labelWrapper}
+      >
         <span className={styles.label}>Our proposal</span>
-      </div>
+      </motion.div>
 
       <Container className={styles.container}>
         <MotionConfig transition={{ duration: duration.xl, ease: easing.common }}>

@@ -5,6 +5,7 @@ import { Container, Section } from '@/components/layout';
 import { Quote } from '@/components/common';
 import Photo from '@/assets/images/about/photo.jpg';
 import styles from './index.module.scss';
+import { Paragraph } from '@/components/ui';
 
 export interface IProps {
   interactor: IAboutInteractor;
@@ -49,7 +50,7 @@ export const AboutRouter: React.FC<IProps> = ({ interactor }) => {
               />
             </div>
 
-            <p className={styles.description}>{interactor.content.description}</p>
+            <Paragraph className={styles.description}>{interactor.content.description}</Paragraph>
           </div>
         </div>
       </Container>

@@ -21,7 +21,7 @@ export const Social: React.FC<IProps> = ({ variant = 'icon', direction = 'row' }
     <ul className={clsx(styles.list, styles[direction])}>
       {social.map(item => (
         <li key={item.label} className={styles.icon}>
-          <a href={item.link} target="_blank" className={styles.link}>
+          <a href={item.link} aria-label={item.label} target="_blank" className={styles.link}>
             {variant === 'icon' ? (
               <IconWrapper className={styles.icon}>{icons[item.name]}</IconWrapper>
             ) : (

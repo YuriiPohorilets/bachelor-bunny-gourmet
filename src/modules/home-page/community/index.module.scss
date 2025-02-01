@@ -68,10 +68,15 @@
 }
 
 .description {
-  color: var(--white, #fff);
-  text-align: justify;
-  font-family: $font-century-gothic;
-  font-size: 1.125rem;
   line-height: 1.1277;
   letter-spacing: -0.02em;
+
+  & > span:first-of-type {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  &::first-letter {
+    margin-bottom: -0.005em !important;
+  }
 }

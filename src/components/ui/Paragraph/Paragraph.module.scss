@@ -1,0 +1,23 @@
+@import '@/styles/mixins';
+@import '@/styles/variables';
+
+.paragraph {
+  color: var(--white, #fff);
+  font-family: $font-century-gothic;
+  font-size: 1.125rem;
+  letter-spacing: 0.01em;
+  font-weight: 400;
+  text-align: justify;
+  white-space: pre-line;
+}
+
+.paragraph.capitalize::first-letter {
+  margin-bottom: -0.1em;
+  float: left;
+
+  font-size: 6.5em;
+  font-family: $font-cormorant-unicase;
+  font-weight: 500;
+  line-height: 0.75;
+  text-transform: uppercase;
+}

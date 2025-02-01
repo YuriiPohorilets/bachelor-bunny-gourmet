@@ -6,6 +6,8 @@
   padding-top: 148px;
   padding-bottom: 40px;
 
+  height: fit-content;
+
   background-color: #c7c7c7;
   background-image: url('../../../assets/images/home/about_bg.jpg');
 
@@ -33,6 +35,10 @@
   @include tablet {
     padding-top: 64px;
     padding-bottom: 64px;
+  }
+
+  @include desktop-lg {
+    height: 100lvh;
   }
 }
 
@@ -91,6 +97,22 @@
 .descriptionWrapper {
   display: flex;
   flex-direction: column;
+
+  @include desktop-lg {
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -40px;
+
+      width: 1px;
+      height: 100%;
+
+      background-color: var(--golden, #be8900);
+    }
+  }
 }
 
 .description {
@@ -99,6 +121,7 @@
   color: var(--white, #fff);
   font-size: 1rem;
   letter-spacing: -0.03em;
+  font-family: $font-century-gothic;
 
   @include tablet {
     max-width: 668px;

@@ -81,10 +81,12 @@
 }
 
 .description {
-  color: var(--white, #fff);
-  font-size: 1.125rem;
-
   line-height: 1.27em;
+  text-align: left;
+
+  @include desktop-lg {
+    text-align: justify;
+  }
 }
 
 .link {
@@ -92,7 +94,7 @@
   margin-top: 245px;
 
   @include desktop-lg {
-    margin-top: 290px;
+    margin-top: 0;
     width: 100%;
   }
 }

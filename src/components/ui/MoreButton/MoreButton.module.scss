@@ -1,0 +1,26 @@
+@import '@/styles/mixins';
+@import '@/styles/variables';
+
+.button {
+  @include button;
+  @include flex-center;
+  margin-top: 16px;
+  align-self: flex-end;
+
+  padding-block: 10px;
+  padding-inline: 10px;
+
+  color: var(--white, #fff);
+  font-family: $font-gotham-pro;
+  font-size: 1.125rem;
+  text-decoration: underline;
+  text-underline-position: from-font;
+  text-decoration-thickness: 0;
+
+  background-color: transparent;
+  border: none;
+
+  @include hover-focus {
+    color: var(--golden, #be8900);
+  }
+}
