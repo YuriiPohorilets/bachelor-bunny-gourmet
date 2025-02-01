@@ -8,6 +8,7 @@ import styles from './Link.module.scss';
 interface IProps extends LinkProps, React.PropsWithChildren {
   fullWidth?: boolean;
   className?: string | string[];
+  label?: string;
 }
 
 export const Link: React.FC<IProps> = ({ children, fullWidth, className, ...rest }) => {

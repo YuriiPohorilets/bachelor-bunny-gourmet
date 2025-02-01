@@ -1,6 +1,6 @@
 import { ICommunityInteractor } from './interactor';
 import { Container, Section } from '@/components/layout';
-import { Button } from '@/components/ui';
+import { Button, Paragraph } from '@/components/ui';
 import styles from './index.module.scss';
 
 export interface IProps {
@@ -15,11 +15,12 @@ export const CommunityRouter: React.FC<IProps> = ({ interactor }) => {
           <div className={styles.content}>
             <div className={styles.titleWrapper}>
               <h2 className={styles.title}>{interactor.content.title}</h2>
-              <p className={styles.description}>
-                {interactor.content.description.map((item, index) => (
-                  <span key={index}>{item}</span>
+
+              <Paragraph className={styles.description}>
+                {interactor.content.description.map((text, index) => (
+                  <span key={index}>{text}</span>
                 ))}
-              </p>
+              </Paragraph>
             </div>
 
             <Button

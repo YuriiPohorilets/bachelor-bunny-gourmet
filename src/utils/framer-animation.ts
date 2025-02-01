@@ -16,4 +16,22 @@ export const animation = {
     animate: { y: value[1], opacity: 1 },
     exit: { y: value[2], opacity: 0 },
   }),
+
+  slide: (value: [number, number]) => ({
+    initial: { x: value[0], opacity: 0 },
+    whileInView: { x: 0, opacity: 1 },
+    exit: { x: value[1], opacity: 0 },
+  }),
+
+  swipe: (value: [number, number]) => ({
+    initial: { y: value[0], opacity: 0 },
+    whileInView: { y: 0, opacity: 1 },
+    exit: { y: value[1], opacity: 0 },
+  }),
+
+  zoom: (value: [number, number]) => ({
+    initial: { scale: value[0], opacity: 0 },
+    whileInView: { scale: 0, opacity: 1 },
+    exit: { scale: value[1], opacity: 0 },
+  }),
 };

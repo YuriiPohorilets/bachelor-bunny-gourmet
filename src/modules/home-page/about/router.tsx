@@ -1,9 +1,12 @@
 import Image from 'next/image';
+import { motion, MotionConfig } from 'motion/react';
 
 import { IAboutInteractor } from './interactor';
 import { Collapse, Container, Section } from '@/components/layout';
 import { Quote } from '@/components/common';
+import { Paragraph, MoreButton } from '@/components/ui';
 import styles from './index.module.scss';
+import { animation } from '@/utils/framer-animation';
 
 export interface IProps {
   interactor: IAboutInteractor;
@@ -13,44 +16,49 @@ export const AboutRouter: React.FC<IProps> = ({ interactor }) => {
   const { matches, content, descriptionExpanded, handleDescriptionExpandToggle } = interactor;
 
   return (
-    <Section id="about" className={styles.section}>
+    <Section id="about" className={styles.section} containerRef={interactor.sectionRef}>
       <Container className={styles.container}>
-        <div className={styles.wrapper}>
-          <div className={styles.content}>
-            <Quote
-              align={matches.isDesktop ? 'end' : 'start'}
-              content={content.title}
-              className={styles.qoute}
-            />
+        <MotionConfig transition={{ duration: 0.8, ease: 'easeInOut' }}>
+          <div className={styles.wrapper}>
+            <div className={styles.content}>
+              <motion.div {...animation.slide([30, -30])} viewport={{ amount: 0.7 }}>
+                <Quote
+                  align={matches.isDesktop ? 'end' : 'start'}
+                  content={content.title}
+                  className={styles.qoute}
+                />
+              </motion.div>
 
-            <div className={styles.descriptionWrapper}>
-              <p className={styles.description}>{content.description[0]}</p>
+              <motion.div
+                {...animation.slide([-30, 30])}
+                viewport={{ amount: 0.7 }}
+                className={styles.descriptionWrapper}
+              >
+                <Paragraph className={styles.description}>{content.description[0]}</Paragraph>
 
-              <Collapse open={matches.isTablet ? true : descriptionExpanded}>
-                <p className={styles.description}>{content.description[1]}</p>
-              </Collapse>
+                <Collapse open={matches.isDesktop || descriptionExpanded}>
+                  <p className={styles.description}>{content.description[1]}</p>
+                </Collapse>
 
-              {!matches.isTablet && (
-                <button
-                  type="button"
-                  onClick={handleDescriptionExpandToggle}
-                  className={styles.readMoreButton}
-                >
-                  read {descriptionExpanded ? 'LESS' : 'MORE'}
-                </button>
-              )}
+                {!matches.isDesktop && (
+                  <MoreButton
+                    label={`read ${descriptionExpanded ? 'LESS' : 'MORE'}`}
+                    onClick={handleDescriptionExpandToggle}
+                  />
+                )}
+              </motion.div>
             </div>
-          </div>
 
-          <div className={styles.imageWrapper}>
-            <Image
-              alt={content.image.alt}
-              width={content.image.width}
-              height={content.image.height}
-              src={content.image.src}
-            />
+            <motion.div style={{ y: interactor.photoY }} className={styles.imageWrapper}>
+              <Image
+                alt={content.image.alt}
+                width={content.image.width}
+                height={content.image.height}
+                src={content.image.src}
+              />
+            </motion.div>
           </div>
-        </div>
+        </MotionConfig>
       </Container>
     </Section>
   );

@@ -14,12 +14,19 @@ const CateringAndEventsPage = () => {
     <>
       <Head>
         <title>Catering & Events</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
         <link rel="icon" type="image/png" href="favicons/favicon-96x96.png" sizes="96x96" />
         <link rel="icon" type="image/svg+xml" href="favicons/favicon.svg" />
         <link rel="shortcut icon" href="favicons/favicon.ico" />
         <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png" />
         <meta name="apple-mobile-web-app-title" content="Bachelor Bunny Gourmet" />
         <link rel="manifest" href="favicons/site.webmanifest" />
+
+        <meta
+          name="description"
+          content="Bachelor Bunny Gourmet offers more than just food and event management; it brings an experience to male-themed events. Perfect for bachelor parties, cigar nights, and sports gatherings, our catering adds gourmet sophistication. Our tastefully dressed Bunny Belles ensure memorable, high-class service."
+        />
       </Head>
 
       <BgWrapper background={heroBg}>

@@ -94,6 +94,7 @@
   text-align: center;
   font-size: 1.125rem;
   letter-spacing: 0.03em;
+  font-family: $font-century-gothic;
 }
 
 .link {
@@ -116,7 +117,6 @@
   gap: 32px;
 
   width: min(100%, 1052px);
-  // max-height: 136px;
 }
 
 .navItem {

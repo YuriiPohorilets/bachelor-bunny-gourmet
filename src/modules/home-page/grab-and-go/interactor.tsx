@@ -1,9 +1,16 @@
+import { MotionValue, useScroll, useTransform } from 'motion/react';
+import { useRef } from 'react';
+
 import Content1Img from '@/assets/images/home/grab-and-go_content-1.jpg';
 import Content2Img from '@/assets/images/home/grab-and-go_content-2.jpg';
 import { useMediaQuery } from '@/hooks/useMediaQuery';
 import { MediaQuery } from '@/types';
 
 export interface IGrabAndGoInteractor {
+  sectionRef: React.RefObject<HTMLElement>;
+  imageTopY: MotionValue<number>;
+  imageBottomY: MotionValue<number>;
+
   matches: {
     isDesktop: boolean;
   };
@@ -19,7 +26,19 @@ export interface IGrabAndGoInteractor {
 export const useGrabAndGoInteractor = (): IGrabAndGoInteractor => {
   const isDesktop = useMediaQuery(MediaQuery.Desktop);
 
+  const sectionRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ['0 1', '0.5 0'],
+  });
+
+  const imageTopY = useTransform(scrollYProgress, [0, 1], [130, 0]);
+  const imageBottomY = useTransform(scrollYProgress, [0, 1], [0, 130]);
+
   return {
+    sectionRef,
+    imageBottomY,
+    imageTopY,
     matches: { isDesktop },
 
     content: {

@@ -20,7 +20,7 @@ export const Button = <T extends React.ElementType = 'button'>({
 
   return (
     <Component className={buttonClasses} {...rest}>
-      {children}
+      <span className={styles.label}>{children}</span>
     </Component>
   );
 };
