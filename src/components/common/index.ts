@@ -7,6 +7,7 @@ export { Quote } from './Quote/Quote';
 export { Social } from './Social/Social';
 export { Rating } from './Rating/Rating';
 export { BgWrapper } from './BgWrapper/BgWrapper';
+export { Crown } from './Crown/Crown';
 
 export { SwiperPagination } from './SwiperPagination/SwiperPagination';
 export { SwiperNavigationButton } from './SwiperNavigationButton/SwiperNavigationButton';
